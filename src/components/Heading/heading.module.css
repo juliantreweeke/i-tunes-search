@@ -1,0 +1,27 @@
+@import '../../styles/variables.css';
+
+.heading {
+    color: var(--color-black);
+    transition: all .45s ease-in-out;
+    animation: fadeIn 1s steps(80, end);
+    max-width: 647px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading[data-variant="blue"]  {
+    color: var(--color-blue);
+}
+
+.heading[data-variant="white"]  {
+  color: var(--color-white);
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+}
