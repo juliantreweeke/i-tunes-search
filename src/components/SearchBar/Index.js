@@ -6,14 +6,9 @@ import EN from "../../EN.json";
 
 const SearchBar = ({ placeholder, handleSubmit }) => {
 
-  const handleSubmitEvent = (event) => {
-    event.preventDefault();
-    handleSubmit()
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit();
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit(event);
     }
   };
 
@@ -21,11 +16,11 @@ const SearchBar = ({ placeholder, handleSubmit }) => {
     <form
       className={styles.searchbar}
       onKeyPress={handleKeyPress}
-      onSubmit={handleSubmitEvent}
+      onSubmit={handleSubmit}
     >
       <label htmlFor="header-search">
         <span className="visually-hidden">
-          Enter album search criteria here
+          Enter search criteria here
         </span>
       </label>
       <div className={styles.input_container}>
@@ -37,7 +32,7 @@ const SearchBar = ({ placeholder, handleSubmit }) => {
           name="search"
         />
       </div>
-      <Button type="submit">Search</Button>
+      <Button type="submit">{EN.SEARCH}</Button>
     </form>
   );
 };

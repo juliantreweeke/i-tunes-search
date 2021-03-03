@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
-import { music_tracks_reducers } from './Reducers/Music-tracks-reducer';
+import { combineReducers } from "redux";
+import { searchQuery } from "./Reducers/searchQuery.reducer";
 
-export default combineReducers({music_tracks_reducers});
+export default combineReducers({ searchQuery });
