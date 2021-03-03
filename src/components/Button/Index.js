@@ -1,40 +1,30 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import styles from './button.module.css';
-import { Link } from 'gatsby';
+import PropTypes from "prop-types";
+import React from "react";
+import styles from "./button.module.css";
 
-const Button = ({ children, variant, ...props }) => {
+const Button = ({ children, variant, href, label, ...props }) => {
   const HyperLinkButton = (
-    <a href={props.href} aria-label="Email me to find out how we can work together" className={styles.button} data-variant={variant}>
+    <a
+      href={href}
+      aria-label={label}
+      className={styles.button}
+      data-variant={variant}
+    >
       {children}
     </a>
   );
-    // todo
-  const IconButton = (
-    <Link {...props} className={styles.button} data-variant={variant}>
-      {children}
-    </Link>
-  );
-
-  const LinkButton = (
-    <Link {...props} className={styles.button} data-variant={variant}>
-      {children}
-    </Link>
-  );
+  // todo
 
   const StandardButton = (
     <button {...props} className={styles.button} data-variant={variant}>
       {children}
-    </button> 
+    </button>
   );
 
-  if(props.to){
-    return LinkButton
+  if (href) {
+    return HyperLinkButton;
   }
-  if(props.href){
-    return HyperLinkButton
-  }
-  return StandardButton
+  return StandardButton;
 };
 
 Button.propTypes = {

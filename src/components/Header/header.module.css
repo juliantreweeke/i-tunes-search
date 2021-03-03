@@ -1,0 +1,14 @@
+@import '../../styles/variables.css';
+
+header {
+  background: var(--color-black);
+  background:blanchedalmond;
+  width:100vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  align-items: center;
+  height: 8rem;
+  width:100%;
+}

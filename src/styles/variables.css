@@ -8,6 +8,6 @@
     --color-blue: #7CB4B8; 
     --color-orange: #ea9f5e;
     --color-brown: #6b5858;
-    --font-color-primary: var(--color-black);
-    --font-color-secondary: var(--color-white);
+    --color-primary: var(--color-black);
+    --color-secondary: var(--color-off-white);
 }

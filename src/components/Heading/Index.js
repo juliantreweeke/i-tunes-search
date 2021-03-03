@@ -3,14 +3,14 @@ import React from 'react';
 import styles from './heading.module.css';
 
 
-const Heading = ({ children, headingLevel, style, variant }) => {
+const Heading = ({ children, headingLevel, style, variant, size }) => {
 
   const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
   const Title = validHeadingLevels.includes(headingLevel) ? headingLevel : 'p'; 
 
   return (
-    <Title style={style} className={styles.heading} data-variant={variant}>{children}</Title>
+    <Title style={style} className={styles.heading} data-variant={variant} data-size={size}>{children}</Title>
   );
 };
 

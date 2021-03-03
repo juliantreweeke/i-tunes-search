@@ -6,7 +6,9 @@ import styles from './home.module.css';
 
 const Home = () => {
   return (
-    <Layout>This is home route</Layout>
+    <Layout>
+      This is home route
+    </Layout>
   );
 };
 

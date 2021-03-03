@@ -1,39 +1,13 @@
 .layout {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    'header'
-    'main'
-    'footer';
   max-width: 1280px;
-  justify-content: center;
-  margin: 0 auto;
-  overflow-x: hidden;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  margin-left: auto;
+  margin-right: auto; 
+  scrollbar-width: none; 
 }
 
 .layout::-webkit-scrollbar {
   display: none;
 }
 
-.layout > header {
-  grid-area: header;
-}
-
-.layout > main {
-  grid-area: main;
-}
-
-.layout > footer {
-  grid-area: footer;
-}
-
-.layout > main {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-}
 

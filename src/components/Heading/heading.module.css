@@ -7,6 +7,7 @@
     max-width: 647px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 2.4rem;
 }
 
 .heading[data-variant="blue"]  {
@@ -15,6 +16,14 @@
 
 .heading[data-variant="white"]  {
   color: var(--color-white);
+}
+
+.heading[data-size="big"]  {
+  font-size: 3.6rem;
+}
+
+.heading[data-size="small"]  {
+  font-size: 1.8rem;
 }
 
 @keyframes fadeIn {
