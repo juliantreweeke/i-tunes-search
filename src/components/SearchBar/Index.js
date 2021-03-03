@@ -2,25 +2,26 @@ import PropTypes from "prop-types";
 import React from "react";
 import Button from "../Button/Index";
 import styles from "./searchbar.module.css";
+import EN from "../../EN.json";
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-};
+const SearchBar = ({ placeholder, handleSubmit }) => {
 
-const SearchBar = ({ children }) => {
+  const handleSubmitEvent = (event) => {
+    event.preventDefault();
+    handleSubmit()
+  };
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSubmit();
     }
   };
 
-  onkeypress = "handle";
-
   return (
     <form
       className={styles.searchbar}
       onKeyPress={handleKeyPress}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmitEvent}
     >
       <label htmlFor="header-search">
         <span className="visually-hidden">
@@ -32,7 +33,7 @@ const SearchBar = ({ children }) => {
           className={styles.input}
           type="text"
           id="header-search"
-          placeholder="Search blog posts"
+          placeholder={placeholder || EN.DEFAULT_SEARCH_PLACEHOLDER}
           name="search"
         />
       </div>
@@ -42,7 +43,8 @@ const SearchBar = ({ children }) => {
 };
 
 SearchBar.propTypes = {
-  children: PropTypes.node.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  placeholder: PropTypes.string
 };
 
 export default SearchBar;
