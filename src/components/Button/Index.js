@@ -13,7 +13,6 @@ const Button = ({ children, variant, href, label, ...props }) => {
       {children}
     </a>
   );
-  // todo
 
   const StandardButton = (
     <button {...props} className={styles.button} data-variant={variant}>

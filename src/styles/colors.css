@@ -1,16 +1,28 @@
 :root {
     --color-black:#170F11;
     --color-grey: #817F75;
-    --color-green: #81F7E5;
+    --color-blue: #009DDC;
+    --color-blue-light: #5cc3eb;
+
     --color-white:#FFFFFF;
     --color-rose: #FB586F;
     --color-red: #f5414f;
 
-    --color-primary: var(--color-green);
+    --color-primary: var(--color-blue);
+    --color-primary-light: var(--color-blue-light);
     --color-secondary: var(--color-rose);
     --color-input: var(--color-white);
     --color-text-dark: var(--color-black);
     --color-text-light: var(--color-white);
     --color-border: var(--color-grey);
     --color-error: var(--color-red);
+
+    /* buttons */
+    --btn-primary-bg: var(--color-primary);
+    --btn-primary-hover: var(--color-primary-light);
+    --btn-primary-active: var(--color-primary-dark);
+    --btn-primary-label: var(--white);
+
+    --btn-disabled-bg: var(--color-grey);
+    --btn-disabled-label: var(--gray-10);
 }

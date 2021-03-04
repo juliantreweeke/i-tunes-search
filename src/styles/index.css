@@ -2,10 +2,16 @@
 @import './spacing.css';
 @import './typography.css';
 
+:root {
+  --radius: 8px;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {

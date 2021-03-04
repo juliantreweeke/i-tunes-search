@@ -1,15 +1,27 @@
 .button {
-  background: var(--color-black);
+  background: var(--btn-primary-bg);
+  font-weight: 700;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius);
   font-size: var(--text-md);
-  color: var(--color-white);
-  border-radius: 4px;
-  padding: 8px;
+  color: var(--color-text-light);
+  transition: .2s;
   border: none;
-  width: auto;
+}
+
+.button:hover {
+  background-color: var(--btn-primary-hover);
 }
 
 .button:disabled{
-  border: red 2px solid;
-}
+  background: var(--btn-disabled-bg);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+} 
