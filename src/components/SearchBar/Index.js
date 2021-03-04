@@ -4,7 +4,7 @@ import Button from "../Button/Index";
 import styles from "./searchbar.module.css";
 import EN from "../../EN.json";
 
-const SearchBar = ({ placeholder, handleSubmit }) => {
+const SearchBar = ({ loading, placeholder, handleSubmit }) => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -50,7 +50,7 @@ const SearchBar = ({ placeholder, handleSubmit }) => {
           value={searchQuery}
         />
       </div>
-      <Button type="submit">{EN.SEARCH}</Button>
+      <Button disabled={loading} type="submit">{EN.SEARCH}</Button>
     </form>
   );
 };

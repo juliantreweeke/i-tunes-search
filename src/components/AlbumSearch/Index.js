@@ -21,7 +21,7 @@ const AlbumSearch = () => {
   };
 
    useEffect(() => {
-    if (!loading && data) {
+    if (!loading && data.results) {
         setAlbums(data.results)
     }
   }, [data, loading, setAlbums]);

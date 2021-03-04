@@ -12,3 +12,7 @@
   border: none;
   width: auto;
 }
+
+.button:disabled{
+  border: red 2px solid;
+}
