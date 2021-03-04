@@ -2,32 +2,38 @@ import { useState, useEffect, useRef } from "react";
 
 const useFetch = (url) => {
   const cache = useRef({});
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [fetchedData, setFetchedData] = useState([]);
+  const [fetchLoading, setFetchLoading] = useState(false);
+  const [fetchError, setFetchError] = useState(null);
+
   useEffect(() => {
     if (!url) {
       return;
     }
 
-    //TODO add TRY AND CATCH
     async function fetchData() {
-      setLoading(true);
-      const response = await fetch(url);
-      const data = await response.json();
-      setData(data);
-      setLoading(false);
+      setFetchLoading(true);
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setFetchedData(data);
+        setFetchLoading(false);
+      } catch (error) {
+        setFetchError(error);
+        setFetchLoading(false);
+      }
     }
 
     if (cache.current[url]) {
       const data = cache.current[url];
-      setData(data);
-      setLoading(false);
+      setFetchedData(data);
+      setFetchLoading(false);
     } else {
         fetchData();
     }
   }, [url]);
 
-  return { data, loading };
+  return { fetchError, fetchedData, fetchLoading };
 };
 
 export default useFetch;

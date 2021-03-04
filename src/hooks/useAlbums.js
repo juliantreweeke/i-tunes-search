@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useCallback } from "react"
 import actions from '../store/Actions/index';
 
-const useSetAlbums = () => {
+const useAlbums = () => {
   const dispatch = useDispatch()
 
   const albums = useSelector(state => state.albums);
@@ -17,4 +17,4 @@ const useSetAlbums = () => {
   }
 }
 
-export default useSetAlbums;
+export default useAlbums;
