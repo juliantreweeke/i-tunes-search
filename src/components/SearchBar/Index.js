@@ -1,22 +1,38 @@
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Index";
 import styles from "./searchbar.module.css";
 import EN from "../../EN.json";
 
 const SearchBar = ({ placeholder, handleSubmit }) => {
 
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  }
+
+  const handleSearchQuery = (event) => {
+    event.preventDefault();
+    handleSubmit(searchQuery);
+    resetInputField();
+  }
+
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      handleSubmit(event);
+      handleSearchQuery(event)
     }
   };
+
+  const resetInputField = () => {
+    setSearchQuery('');
+  }
 
   return (
     <form
       className={styles.searchbar}
       onKeyPress={handleKeyPress}
-      onSubmit={handleSubmit}
+      onSubmit={handleSearchQuery}
     >
       <label htmlFor="header-search">
         <span className="visually-hidden">
@@ -30,6 +46,8 @@ const SearchBar = ({ placeholder, handleSubmit }) => {
           id="header-search"
           placeholder={placeholder || EN.DEFAULT_SEARCH_PLACEHOLDER}
           name="search"
+          onChange={handleInputChange}
+          value={searchQuery}
         />
       </div>
       <Button type="submit">{EN.SEARCH}</Button>
