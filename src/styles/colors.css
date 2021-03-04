@@ -1,0 +1,16 @@
+:root {
+    --color-black:#170F11;
+    --color-grey: #817F75;
+    --color-green: #81F7E5;
+    --color-white:#FFFFFF;
+    --color-rose: #FB586F;
+    --color-red: #f5414f;
+
+    --color-primary: var(--color-green);
+    --color-secondary: var(--color-rose);
+    --color-input: var(--color-white);
+    --color-text-dark: var(--color-black);
+    --color-text-light: var(--color-white);
+    --color-border: var(--color-grey);
+    --color-error: var(--color-red);
+}

@@ -1,0 +1,36 @@
+@import './colors.css';
+@import './spacing.css';
+@import './typography.css';
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+input {
+  font-size: var(--text-md);
+}

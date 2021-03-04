@@ -1,11 +1,8 @@
-@import '../../styles/variables.css';
-
 .button {
   background: var(--color-black);
   cursor: pointer;
   display: inline-block;
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: var(--text-md);
   color: var(--color-white);
   border-radius: 4px;
   padding: 8px;

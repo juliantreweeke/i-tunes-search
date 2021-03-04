@@ -10,7 +10,8 @@ const Home = () => {
   return (
     <Layout>
       This is home route
-      <div>You searched for {searchQuery}</div>
+      <p>You searched for {searchQuery}</p>
+
     </Layout>
   );
 };

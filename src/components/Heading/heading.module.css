@@ -1,36 +1,34 @@
-@import '../../styles/variables.css';
+.heading {
+  color: var(--color-text-dark);
+  transition: all 0.45s ease-in-out;
+  animation: fadeIn 1s steps(80, end);
+  max-width: 647px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.4rem;
+}
+
+.heading[data-variant="light"] {
+  color: var(--color-text-light);
+}
 
 .heading {
-    color: var(--color-black);
-    transition: all .45s ease-in-out;
-    animation: fadeIn 1s steps(80, end);
-    max-width: 647px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 2.4rem;
+  font-size: var(--text-lg);
 }
 
-.heading[data-variant="blue"]  {
-    color: var(--color-blue);
+.heading[data-size="large"] {
+  font-size: var(--text-xl);
 }
 
-.heading[data-variant="white"]  {
-  color: var(--color-white);
-}
-
-.heading[data-size="big"]  {
-  font-size: 3.6rem;
-}
-
-.heading[data-size="small"]  {
-  font-size: 1.8rem;
+.heading .small {
+  font-size: var(--text-md);
 }
 
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 100;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
 }
