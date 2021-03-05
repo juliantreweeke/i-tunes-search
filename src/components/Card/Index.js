@@ -7,18 +7,20 @@ import { formatDateString, truncateString } from "../../helpers/helpers";
 
 const Card = ({ data }) => {
 
+  const albumUrl = `/album/${data.collectionId}`;
+
   return (
     <li className={styles.card}>
-      <a href="/card-design-woes">
+      <a href={albumUrl}>
         <div className={styles.imageContainer}>
           <img
             src={data.artworkUrl100}
-            alt="Description of the great product's appearance"
+            alt={data.collectionName}
           />
         </div>
         <div className={styles.text}> 
           <Heading size="medium" className={styles.heading} headingLevel="h2">
-            {truncateString(data.trackName)}
+            {truncateString(data.collectionName)}
           </Heading>
           <p>{truncateString(data.artistName)}</p>
         </div>

@@ -1,2 +1,4 @@
-export const I_TUNES_SEARCH_URL = 'https://itunes.apple.com/search?term=';
+export const I_TUNES_BASE_URL = 'https://itunes.apple.com/';
+
+
 
