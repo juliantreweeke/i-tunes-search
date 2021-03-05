@@ -1,40 +1,24 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 import Button from "../Button/Index";
 import styles from "./searchbar.module.css";
+import useForm from "../../hooks/useForm";
 import EN from "../../EN.json";
 
-const SearchBar = ({ loading, placeholder, handleSubmit }) => {
+const SearchBar = ({ loading, placeholder, handleSearch }) => {
+  const fieldName = "searchQuery";
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const initialFieldValues = { searchQuery: ''}
 
-  const handleInputChange = (event) => {
-    setSearchQuery(event.target.value);
-  }
-
-  const handleSearchQuery = (event) => {
-    event.preventDefault();
-    handleSubmit(searchQuery);
-    resetInputField();
-  }
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSearchQuery(event)
-    }
-  };
-
-  const resetInputField = () => {
-    setSearchQuery('');
-  }
+  const {inputs, handleInputChange, handleKeyPress, handleSubmit} = useForm(handleSearch, initialFieldValues);
+  const isButtonDisabled = loading || Object.entries(inputs).length === 0;
 
   return (
     <form
       className={styles.searchbar}
-      onKeyPress={handleKeyPress}
-      onSubmit={handleSearchQuery}
+      onSubmit={handleSubmit}
     >
-      <label htmlFor="header-search">
+      <label htmlFor={fieldName}>
         <span className="visually-hidden">
           Enter search criteria here
         </span>
@@ -43,20 +27,21 @@ const SearchBar = ({ loading, placeholder, handleSubmit }) => {
         <input
           className={styles.input}
           type="text"
-          id="header-search"
+          id={fieldName}
           placeholder={placeholder || EN.DEFAULT_SEARCH_PLACEHOLDER}
-          name="search"
+          name={fieldName}
           onChange={handleInputChange}
-          value={searchQuery}
+          value={inputs[initialFieldValues]}
+          onKeyPress={handleKeyPress}
         />
       </div>
-      <Button disabled={loading} type="submit">{EN.SEARCH}</Button>
+      <Button disabled={isButtonDisabled} type="submit">{EN.SEARCH}</Button>
     </form>
   );
 };
 
 SearchBar.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 };
 

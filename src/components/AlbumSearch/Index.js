@@ -18,7 +18,7 @@ const AlbumSearch = () => {
   const { error, setError } = useError(url);
 
 
-  const handleSubmit = (searchQuery) => {
+  const handleSearch = ({searchQuery}) => {
     setSearchQuery(searchQuery);
     // setUrl(`https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo`);
     setUrl(`${I_TUNES_SEARCH_URL}${searchQuery}`);
@@ -39,10 +39,10 @@ const AlbumSearch = () => {
   return (
     <div>
       <SearchBar 
-      handleSubmit={handleSubmit} 
-      loading={fetchLoading}
-      placeholder={EN.SEARCH_ALBUMS} 
-    />
+        handleSearch={handleSearch} 
+        loading={fetchLoading}
+        placeholder={EN.SEARCH_ALBUMS} 
+      />
     {error}
     </div>
   );
