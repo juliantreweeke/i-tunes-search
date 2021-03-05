@@ -13,7 +13,11 @@
   font-size: var(--text-lg);
 }
 
-.heading[data-size="large"] {
+.heading[data-size="xxl"] {
+  font-size: var(--text-xxl);
+}
+
+.heading[data-size="xl"] {
   font-size: var(--text-xl);
 }
 

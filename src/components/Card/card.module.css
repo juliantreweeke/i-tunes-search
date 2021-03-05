@@ -1,7 +1,7 @@
 .card {
     border: 1px solid;
     border-radius: var(--radius);
-    min-height: 300px;
+    min-height: 50px;
 }
 
 .card a {
@@ -26,8 +26,12 @@
 
 .card .text, .card .dateContainer {
   color: var(--color-text-dark);
-  padding: var(--component-padding);
+  padding: var(--space-xs);
   max-width: 60ch;
+}
+
+.card .text p {
+  margin:var(--space-xxs) 0px;
 }
 
 .card .dateContainer {

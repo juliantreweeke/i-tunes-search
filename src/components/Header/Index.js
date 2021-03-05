@@ -9,7 +9,7 @@ import EN from "../../EN.json";
 const Header = ({ children }) => {
   return (
     <header>
-      <Heading headingLevel="h1">{EN.ITUNES_ALBUMS}</Heading>
+      <Heading size="xl" headingLevel="h1">{EN.ITUNES_ALBUMS}</Heading>
       {children}
     </header>
   );

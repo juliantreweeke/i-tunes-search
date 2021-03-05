@@ -4,7 +4,6 @@ import Card from '../Card/Index';
 import styles from "./cardDeck.module.css";
 
 const CardDeck = ({ data }) => {
-  console.log(data[0]);
   return (
     <ul className={styles.cardDeck}>
       {data.map((item, index) => (

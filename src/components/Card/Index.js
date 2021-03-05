@@ -2,12 +2,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import styles from "./card.module.css";
 import Heading from "../Heading/Index";
-import { formatDateString } from "../../helpers/helpers";
-import EN from '../../EN.json';
+import { formatDateString, truncateString } from "../../helpers/helpers";
+// import EN from '../../EN.json';
 
 const Card = ({ data }) => {
-
-  const releaseDate = formatDateString(data.releaseDate);
 
   return (
     <li className={styles.card}>
@@ -20,12 +18,12 @@ const Card = ({ data }) => {
         </div>
         <div className={styles.text}> 
           <Heading size="medium" className={styles.heading} headingLevel="h2">
-              {data.trackName}
+            {truncateString(data.trackName)}
           </Heading>
-          <p>{data.artistName}</p>
+          <p>{truncateString(data.artistName)}</p>
         </div>
         <div className={styles.dateContainer}>
-            <small>{EN.RELEASED}: {releaseDate}</small>
+          <small>{formatDateString(data.releaseDate)}</small>
         </div>  
       </a>
     </li>
