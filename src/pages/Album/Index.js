@@ -5,6 +5,7 @@ import styles from './album.module.css';
 import { useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
 import useError from '../../hooks/useError';
+import { resizeITunesImageURL } from '../../helpers/helpers';
 
 import { I_TUNES_BASE_URL } from '../../constants';
 
@@ -22,9 +23,12 @@ const Album = () => {
   useEffect(() => {
     if (!fetchLoading && fetchedData.results) {
       const [album, ...trackList] = fetchedData.results;
-      setAlbum(album);
+      setAlbum({
+        ...album,
+        image: resizeITunesImageURL(album.artworkUrl100, 500)
+      });
+      
       setTrackList(trackList);
-      console.log(trackList);
     } 
     if (!fetchLoading && fetchError){
       setError(fetchError);
@@ -39,7 +43,7 @@ const Album = () => {
       {album && 
         <div>
           <h1>{album.collectionCensoredName}</h1>
-          <img alt={album.collectionCensoredName} src={album.artworkUrl100} />
+          <img alt={album.collectionCensoredName} src={album.image} />
           <a target="_blank" rel="noreferrer" href={album.collectionViewUrl}>BUY</a>
           {trackList.map((track,index) => {
             return (

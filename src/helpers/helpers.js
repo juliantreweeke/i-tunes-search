@@ -16,3 +16,8 @@ export const truncateString = (string) => {
     }
     return `${string.slice(0, CHARACTER_LIMIT)}...`;
 }
+
+export const resizeITunesImageURL = (url, width) => {
+  const trimmedUrl = url.substring(0, url.lastIndexOf("/") + 1);
+  return `${trimmedUrl}${width}x${width}bb.jpg`;
+}

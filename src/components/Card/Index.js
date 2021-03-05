@@ -2,19 +2,23 @@ import PropTypes from "prop-types";
 import React from "react";
 import styles from "./card.module.css";
 import Heading from "../Heading/Index";
-import { formatDateString, truncateString } from "../../helpers/helpers";
-// import EN from '../../EN.json';
+import { 
+  formatDateString, 
+  truncateString,
+  resizeITunesImageURL
+} from "../../helpers/helpers";
 
 const Card = ({ data }) => {
 
   const albumUrl = `/album/${data.collectionId}`;
+  const albumImage = resizeITunesImageURL(data.artworkUrl100, 250);
 
   return (
     <li className={styles.card}>
       <a href={albumUrl}>
         <div className={styles.imageContainer}>
           <img
-            src={data.artworkUrl100}
+            src={albumImage}
             alt={data.collectionName}
           />
         </div>
