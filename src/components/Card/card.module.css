@@ -1,0 +1,67 @@
+.card {
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.card .image {
+    height: 6.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1rem)); 
+}
+
+.card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card,
+.card .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .text {
+  flex-grow: 1;
+  padding: 1rem;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 60ch;
+}
+
+.card + .card {
+  margin-top: 1.5rem;
+}
+
+.card .text > * + * {
+  margin-top: 0.75rem;
+}
+
+.card .text > :last-child {
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.card .text :nth-last-child(2) {
+  margin-bottom: 0.75rem;
+}
+
+.card a:focus {
+  text-decoration: underline;
+}
+
+.card:focus-within {
+  box-shadow: 0 0 0 0.25rem;
+}
+
+.card:focus-within a:focus {
+  text-decoration: none;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0.25rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 0 0.25rem;
+}

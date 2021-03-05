@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
-import SearchBar from "../SearchBar/Index";
+import SearchForm from "../SearchForm/Index";
 import { I_TUNES_SEARCH_URL } from '../../constants';
 import useAlbums from '../../hooks/useAlbums';
 import useSearchQuery from '../../hooks/useSearchQuery';
@@ -38,7 +38,7 @@ const AlbumSearch = () => {
 
   return (
     <div>
-      <SearchBar 
+      <SearchForm 
         handleSearch={handleSearch} 
         loading={fetchLoading}
         placeholder={EN.SEARCH_ALBUMS} 

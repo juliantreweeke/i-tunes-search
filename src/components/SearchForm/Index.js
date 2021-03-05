@@ -5,9 +5,8 @@ import styles from "./searchbar.module.css";
 import useForm from "../../hooks/useForm";
 import EN from "../../EN.json";
 
-const SearchBar = ({ loading, placeholder, handleSearch }) => {
+const SearchForm = ({ loading, placeholder, handleSearch }) => {
   const fieldName = "searchQuery";
-
   const initialFieldValues = { searchQuery: ''}
 
   const {inputs, handleInputChange, handleKeyPress, handleSubmit} = useForm(handleSearch, initialFieldValues);
@@ -40,9 +39,9 @@ const SearchBar = ({ loading, placeholder, handleSearch }) => {
   );
 };
 
-SearchBar.propTypes = {
+SearchForm.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 };
 
-export default SearchBar;
+export default SearchForm;
