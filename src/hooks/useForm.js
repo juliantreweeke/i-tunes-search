@@ -6,15 +6,17 @@ const useForm = (callback, initialFieldValues) => {
   const handleSubmit = (event) => {
     if (event) {
       event.preventDefault();
-      event.target.value = "";
+      event.target.reset();
     }
     callback(inputs);
     setInputs(initialFieldValues);
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSubmit(event);
+    if (event?.key === "Enter") {
+      callback(inputs);
+      setInputs(initialFieldValues);
+      event.target.value = "";
     }
   };
 

@@ -12,8 +12,12 @@ const Home = () => {
 
   return (
     <Layout>
-      This is home route
-      <p>You searched for {searchQuery}</p>
+      { searchQuery && (
+        <div role="alert" className={styles.searchStatus}>
+          <p>You searched for <strong>{searchQuery}</strong> which has <strong>{albums.length}</strong> results</p>
+        </div>
+      )}
+      
       <CardDeck data={albums} />
     </Layout>
   );

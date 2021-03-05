@@ -3,6 +3,7 @@ import React from "react";
 import Button from "../Button/Index";
 import styles from "./searchbar.module.css";
 import useForm from "../../hooks/useForm";
+import {isObjectEmpty} from  "../../helpers/helpers";
 import EN from "../../EN.json";
 
 const SearchForm = ({ loading, placeholder, handleSearch }) => {
@@ -10,7 +11,7 @@ const SearchForm = ({ loading, placeholder, handleSearch }) => {
   const initialFieldValues = { searchQuery: ''}
 
   const {inputs, handleInputChange, handleKeyPress, handleSubmit} = useForm(handleSearch, initialFieldValues);
-  const isButtonDisabled = loading || Object.entries(inputs).length === 0;
+  const isButtonDisabled = loading || isObjectEmpty(inputs);
 
   return (
     <form
