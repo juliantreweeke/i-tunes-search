@@ -4,19 +4,18 @@ const useForm = (callback, initialFieldValues) => {
   const [inputs, setInputs] = useState({});
 
   const handleSubmit = (event) => {
-    if (event) {
-      event.preventDefault();
-      event.target.reset();
-    }
+    event.preventDefault();
+    event.target.reset();
     callback(inputs);
     setInputs(initialFieldValues);
   };
 
   const handleKeyPress = (event) => {
     if (event?.key === "Enter") {
+      event.preventDefault();
+      event.target.value = "";
       callback(inputs);
       setInputs(initialFieldValues);
-      event.target.value = "";
     }
   };
 
