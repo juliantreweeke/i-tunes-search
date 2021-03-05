@@ -20,8 +20,12 @@
   font-size: var(--text-xl);
 }
 
-.heading[data-size="small"] {
+.heading[data-size="medium"] {
   font-size: var(--text-md);
+}
+
+.heading[data-size="small"] {
+  font-size: var(--text-sm);
 }
 
 @keyframes fadeIn {

@@ -1,23 +1,28 @@
 import PropTypes from "prop-types";
 import React from "react";
 import styles from "./card.module.css";
+import Heading from "../Heading/Index";
+import formatDateString from "../../helpers/formatDateString";
 
 const Card = ({ data }) => {
+
+  const releaseDate = formatDateString(data.releaseDate);
+
   return (
     <li className={styles.card}>
       <a href="/card-design-woes">
-      <div className={styles.image}>
+      <div className={styles.imageContainer}>
         <img
           src={data.artworkUrl100}
           alt="Description of the great product's appearance"
         />
       </div>
       <div className={styles.text}>
-        <h2>
+        <Heading size="medium" className={styles.heading} headingLevel="h2">
           {data.trackName}
-        </h2>
+        </Heading>
         <p>{data.artistName}</p>
-        <small>{data.releaseDate}</small>
+        <small>{releaseDate}</small>
       </div>
       </a>
     </li>
