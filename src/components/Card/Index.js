@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./card.module.css";
 import Heading from "../Heading/Index";
 import { formatDateString } from "../../helpers/helpers";
+import EN from '../../EN.json';
 
 const Card = ({ data }) => {
 
@@ -10,20 +11,22 @@ const Card = ({ data }) => {
 
   return (
     <li className={styles.card}>
-      <a className={styles.link} href="/card-design-woes">
+      <a href="/card-design-woes">
         <div className={styles.imageContainer}>
           <img
             src={data.artworkUrl100}
             alt="Description of the great product's appearance"
           />
         </div>
-        <div className={styles.text}>
+        <div className={styles.text}> 
           <Heading size="medium" className={styles.heading} headingLevel="h2">
-            {data.trackName}
+              {data.trackName}
           </Heading>
           <p>{data.artistName}</p>
-          <small>{releaseDate}</small>
         </div>
+        <div className={styles.dateContainer}>
+            <small>{EN.RELEASED}: {releaseDate}</small>
+        </div>  
       </a>
     </li>
   );
