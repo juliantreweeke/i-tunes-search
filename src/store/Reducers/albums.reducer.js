@@ -1,4 +1,4 @@
-import { SET_DISPLAYED_ALBUMS, SET_ALBUMS } from "../Types";
+import { SET_ALBUM_STATE_FROM_STORAGE, SET_DISPLAYED_ALBUMS, SET_ALBUMS } from "../Types";
 import { DEFAULT_ALBUMS_TO_DISPLAY } from "../../constants";
 
 export const albums = (
@@ -13,6 +13,14 @@ export const albums = (
         displayedAlbums: action.payload.data.splice(0, DEFAULT_ALBUMS_TO_DISPLAY),
         numberOfAlbumsToDisplay: (DEFAULT_ALBUMS_TO_DISPLAY * 2)
       };
+    case SET_ALBUM_STATE_FROM_STORAGE:
+      if (action.payload.data){
+        return {
+          ...state,
+          albumToFocus: action.payload.data,
+        };
+      }
+      return state
     case SET_DISPLAYED_ALBUMS:
       const updatedAlbumList = state.storedAlbums.splice(
         0,

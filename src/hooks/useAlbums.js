@@ -7,10 +7,17 @@ const useAlbums = () => {
 
   const albums = useSelector((state) => state.albums.storedAlbums);
 
+  const albumToFocus = useSelector((state) => state.albums.albumToFocus);
+
   const displayedAlbums = useSelector((state) => state.albums.displayedAlbums);
 
   const setAlbums = useCallback(
     (data) => dispatch(actions.albumsActions.setAlbums(data)),
+    [dispatch]
+  );
+
+  const setAlbumStateFromStorage = useCallback(
+    (data) => dispatch(actions.albumsActions.setAlbumStateFromStorage(data)),
     [dispatch]
   );
 
@@ -21,8 +28,10 @@ const useAlbums = () => {
 
   return {
     albums,
+    albumToFocus,
     displayedAlbums,
     setAlbums,
+    setAlbumStateFromStorage,
     setDisplayedAlbums,
   };
 };

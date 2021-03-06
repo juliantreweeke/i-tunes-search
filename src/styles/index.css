@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+a:focus {
+  outline: 3px solid var(--color-primary);
+}
+
 ul {
   margin: 0px;
   padding: 0px;

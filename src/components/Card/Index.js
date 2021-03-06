@@ -38,8 +38,7 @@ const Card = ({ data, onClick }) => {
         </div>  
       </a>
     </li>
-  );
-};
+  )};
 
 Card.propTypes = {
   data: PropTypes.object.isRequired,
