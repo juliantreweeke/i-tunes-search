@@ -3,6 +3,9 @@ import { SET_ERROR } from "../Types";
 export const error = (state = null, action) => {
   switch (action.type) {
     case SET_ERROR:
+      if(!action.payload.data){
+        return null;
+      }
       if (!action.payload.data.message) {
         return "UNKNOWN_ERROR";
       }

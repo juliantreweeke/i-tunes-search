@@ -47,14 +47,11 @@ const AlbumSearch = () => {
   }, [fetchError, fetchedData, fetchLoading, setAlbums, setError]);
 
   return (
-    <div>
       <SearchForm
         handleSearch={handleSearch}
         loading={fetchLoading}
         placeholder={EN.SEARCH_ALBUMS}
       />
-      {error}
-    </div>
   );
 };
 

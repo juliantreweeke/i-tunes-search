@@ -6,9 +6,3 @@
   scrollbar-width: none; 
   padding: 0 var(--component-padding);
 }
-
-.layout::-webkit-scrollbar {
-  display: none;
-}
-
-
