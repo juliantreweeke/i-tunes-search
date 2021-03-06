@@ -14,6 +14,7 @@ const SearchForm = ({ loading, placeholder, handleSearch }) => {
     handleSearch,
     initialFieldValues
   );
+  
   const isButtonDisabled = isObjectEmpty(inputs);
 
   return (

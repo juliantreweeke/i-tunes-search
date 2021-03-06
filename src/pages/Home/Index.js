@@ -16,12 +16,14 @@ const Home = () => {
     albumToFocus,
     displayedAlbums,
     setDisplayedAlbums,
-    setAlbumStateFromStorage
+    setAlbumFocusFromStorage,
+    setNumberOfAlbumsToDisplay
   } = useAlbums();
 
   useEffect(() => {
-    setAlbumStateFromStorage()
-  }, [setAlbumStateFromStorage]);
+    setAlbumFocusFromStorage()
+    setNumberOfAlbumsToDisplay();
+  }, [setAlbumFocusFromStorage, setNumberOfAlbumsToDisplay]);
 
   useEffect(() => {
     if(albumToFocus && albums){
@@ -34,16 +36,18 @@ const Home = () => {
   const displayLoadMoreButton = displayedAlbums?.length < albums?.length;
 
   const setCardIndexToStorage = (index) => {
-    sessionStore.setItem(SESSION_STORAGE_KEYS.album, index);
     sessionStore.setItem(SESSION_STORAGE_KEYS.albumsToDisplay, displayedAlbums.length);
+    sessionStore.setItem(SESSION_STORAGE_KEYS.album, index);
   }
 
   const cardDeckRef = useRef(null);
 
-  const handleLoadMoreButton = () => {
+  const handleLoadMore = (event) => {
     setDisplayedAlbums();
-    const lastCardInDeck = displayedAlbums.length - 1;
-    setCardFocus(lastCardInDeck);
+    if (event?.key === "Enter") {
+      const lastCardInDeck = displayedAlbums.length - 1;
+      setCardFocus(lastCardInDeck);
+    }
   }
 
   const setCardFocus = (albumToFocus) => {
@@ -52,8 +56,6 @@ const Home = () => {
 
   return (
     <Layout>
-      <button onClick={() => {setCardFocus(2)}}>focus</button>
-      {albumToFocus}
       {albums && (
         <>
           <div role="alert" className={styles.searchStatus}>
@@ -65,7 +67,7 @@ const Home = () => {
           <CardDeck ref={cardDeckRef} onCardClicked={setCardIndexToStorage} data={displayedAlbums} />
           {displayLoadMoreButton && (
             <div className={styles.loadMoreButtonContainer}>
-              <Button variant="outline" onClick={handleLoadMoreButton}>{EN.LOAD_MORE}</Button>
+              <Button variant="outline" onKeyPress={handleLoadMore} onClick={handleLoadMore}>{EN.LOAD_MORE}</Button>
             </div>
           )}
         </>
