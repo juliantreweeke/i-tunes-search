@@ -1,4 +1,4 @@
-import { SET_ALBUMS } from "../Types";
+import { SET_ALBUMS, SET_DISPLAYED_ALBUMS } from "../Types";
 
 const setAlbums = (data) => {
   return {
@@ -9,8 +9,18 @@ const setAlbums = (data) => {
   };
 };
 
+const setDisplayedAlbums = (data) => {
+  return {
+    type: SET_DISPLAYED_ALBUMS,
+    payload: {
+      data,
+    },
+  };
+};
+
 const albumsActions = {
   setAlbums,
+  setDisplayedAlbums
 }
 
 export default albumsActions;
