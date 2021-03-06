@@ -35,14 +35,16 @@ const AlbumSearch = () => {
       const URLSearchQuery = new URLSearchParams(searchParam).get("search");
       setUrlSearchQuery(URLSearchQuery);
     }
+  })
 
+  useEffect(() => {
     if (!fetchLoading && fetchedData.results) {
       setAlbums(fetchedData.results);
     }
     if (!fetchLoading && fetchError) {
       setError(fetchError);
     }
-  }, [fetchError, fetchedData, fetchLoading, searchParam, setAlbums, setError, setUrlSearchQuery]);
+  }, [fetchError, fetchedData, fetchLoading, setAlbums, setError]);
 
   return (
     <div>
