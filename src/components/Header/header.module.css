@@ -1,20 +1,20 @@
-header {
+.header {
   display: grid;
   align-items: center;
   width:100%;
 }
 
-header h1 {
+.header h1 {
   text-align: center;
   padding-top: var(--space-xs);
 }
 
 @media (min-width: 769px) {  
-  header {
+  .header {
     grid-template-columns: 1fr 1fr;                         
   }
 
-  header h1 {
+  .header h1 {
     text-align: left;
   }
 }
