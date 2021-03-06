@@ -23,6 +23,7 @@ const Album = () => {
   useEffect(() => {
     if (!fetchLoading && fetchedData.results) {
       const [album, ...trackList] = fetchedData.results;
+      
       setAlbum({
         ...album,
         image: resizeITunesImageURL(album.artworkUrl100, 500)
@@ -30,6 +31,7 @@ const Album = () => {
       
       setTrackList(trackList);
     } 
+
     if (!fetchLoading && fetchError){
       setError(fetchError);
     }
@@ -48,11 +50,8 @@ const Album = () => {
           {trackList.map((track,index) => {
             return (
               <p>{track.trackName}</p>
-            )
-            
+            )         
           })}
-        
-        
         </div>}
 
 

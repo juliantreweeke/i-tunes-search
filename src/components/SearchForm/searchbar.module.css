@@ -1,6 +1,7 @@
 .searchbar {
   display: grid;
   grid-template-columns:0 1fr auto;
+  padding-top: var(--space-xs);
 }
 
 .searchbar .input_container {

@@ -6,7 +6,7 @@ header {
 
 header h1 {
   text-align: center;
-  padding: var(--space-xs);
+  padding-top: var(--space-xs);
 }
 
 @media (min-width: 769px) {  

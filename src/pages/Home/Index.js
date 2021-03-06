@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../../components/Layout/Index';
 import CardDeck from '../../components/CardDeck/Index';
