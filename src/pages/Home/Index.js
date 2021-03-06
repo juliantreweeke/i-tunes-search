@@ -17,6 +17,10 @@ const Home = () => {
 
   const displayLoadMoreButton = displayedAlbums?.length < albums?.length;
 
+  const onCardClicked = (index) => {
+    
+  }
+
   return (
     <Layout>
       {albums && (
@@ -27,7 +31,7 @@ const Home = () => {
               <strong>{albums.length}</strong> results
             </p>
           </div>
-          <CardDeck data={displayedAlbums} />
+          <CardDeck onCardClicked={onCardClicked} data={displayedAlbums} />
           {displayLoadMoreButton && (
             <div className={styles.loadMoreButtonContainer}>
               <Button variant="outline" onClick={setDisplayedAlbums}>{EN.LOAD_MORE}</Button>

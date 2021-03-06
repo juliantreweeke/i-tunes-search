@@ -3,11 +3,11 @@ import React from "react";
 import Card from '../Card/Index';
 import styles from "./cardDeck.module.css";
 
-const CardDeck = ({ data }) => {
+const CardDeck = ({ data, onCardClicked }) => {
   return (
     <ul className={styles.cardDeck}>
       {data.map((item, index) => (
-        <Card key={index} data={item} />
+        <Card key={index} data={item} onClick={() => { onCardClicked(index) }} />
       ))}
     </ul>
   );
@@ -15,6 +15,7 @@ const CardDeck = ({ data }) => {
 
 CardDeck.propTypes = {
   data: PropTypes.array,
+  onCardClicked: PropTypes.func
 };
 
 export default CardDeck;
