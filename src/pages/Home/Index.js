@@ -35,9 +35,16 @@ const Home = () => {
 
   const setCardIndexToStorage = (index) => {
     sessionStore.setItem(SESSION_STORAGE_KEYS.album, index);
+    sessionStore.setItem(SESSION_STORAGE_KEYS.albumsToDisplay, displayedAlbums.length);
   }
 
   const cardDeckRef = useRef(null);
+
+  const handleLoadMoreButton = () => {
+    setDisplayedAlbums();
+    const lastCardInDeck = displayedAlbums.length - 1;
+    setCardFocus(lastCardInDeck);
+  }
 
   const setCardFocus = (albumToFocus) => {
     cardDeckRef.current.children[albumToFocus].firstChild.focus();
@@ -58,7 +65,7 @@ const Home = () => {
           <CardDeck ref={cardDeckRef} onCardClicked={setCardIndexToStorage} data={displayedAlbums} />
           {displayLoadMoreButton && (
             <div className={styles.loadMoreButtonContainer}>
-              <Button variant="outline" onClick={setDisplayedAlbums}>{EN.LOAD_MORE}</Button>
+              <Button variant="outline" onClick={handleLoadMoreButton}>{EN.LOAD_MORE}</Button>
             </div>
           )}
         </>
