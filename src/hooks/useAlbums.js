@@ -11,8 +11,8 @@ const useAlbums = () => {
 
   const displayedAlbums = useSelector((state) => state.albums.displayedAlbums);
 
-  const setAlbums = useCallback(
-    (data) => dispatch(actions.albumsActions.setAlbums(data)),
+  const parseAlbums = useCallback(
+    (data) => dispatch(actions.albumsActions.parseAlbums(data)),
     [dispatch]
   );
 
@@ -35,7 +35,7 @@ const useAlbums = () => {
     albums,
     albumToFocus,
     displayedAlbums,
-    setAlbums,
+    parseAlbums,
     setAlbumFocusFromStorage,
     setDisplayedAlbums,
     setNumberOfAlbumsToDisplay

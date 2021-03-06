@@ -6,6 +6,26 @@ import {
 } from "../Types";
 import { sessionStore } from "../../utils/storage";
 import { SESSION_STORAGE_KEYS } from "../../constants";
+import { 
+  formatDateString, 
+  truncateString,
+  resizeITunesImageURL
+} from "../../helpers/helpers";
+  
+const parseAlbums = (data) => {
+  return (dispatch) => {
+    const parsedData = data.map((album) => {
+      return {
+        url: `/album/${album.collectionId}`,
+        image: resizeITunesImageURL(album.artworkUrl100, 250),
+        heading: truncateString(album.collectionName),
+        text: truncateString(album.artistName),
+        detail: formatDateString(album.releaseDate),
+      }
+    })
+    dispatch(setAlbums(parsedData));
+  };
+}
 
 const setAlbums = (data) => {
   return {
@@ -67,6 +87,7 @@ const setAlbumFocusFromStorage = () => {
 };
 
 const albumsActions = {
+  parseAlbums,
   setAlbums,
   setAlbumFocusFromStorage,
   setDisplayedAlbums,

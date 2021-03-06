@@ -25,7 +25,7 @@
     border-bottom-right-radius: 0;
 }
 
-.card .text, .card .dateContainer {
+.card .text, .card .detailContainer {
   color: var(--color-text-dark);
   padding: var(--space-xs);
   max-width: 60ch;
@@ -35,7 +35,7 @@
   margin:var(--space-xxs) 0px;
 }
 
-.card .dateContainer {
+.card .detailContainer {
   margin-top: auto;
 }
 

@@ -3,38 +3,25 @@ import React from 'react';
 import styles from "./card.module.css";
 import Heading from "../Heading/Index";
 
-import { 
-  formatDateString, 
-  truncateString,
-  resizeITunesImageURL
-} from "../../helpers/helpers";
-
-
 const Card = ({ data, onClick }) => {
-
-  const albumUrl = `/album/${data.collectionId}`;
-  const albumImage = resizeITunesImageURL(data.artworkUrl100, 250);
-  const albumName = truncateString(data.collectionName);
-  const artistName = truncateString(data.artistName);
-  const releaseDate = formatDateString(data.releaseDate);
 
   return (
     <li onClick={onClick} className={styles.card}>
-      <a href={albumUrl}>
+      <a href={data.url}>
         <div className={styles.imageContainer}>
           <img
-            src={albumImage}
+            src={data.image}
             alt={data.collectionName}
           />
         </div>
         <div className={styles.text}> 
           <Heading size="medium" className={styles.heading} headingLevel="h2">
-            {albumName}
+            {data.heading}
           </Heading>
-          <p>{artistName}</p>
+          <p>{data.text}</p>
         </div>
-        <div className={styles.dateContainer}>
-          <small>{releaseDate}</small>
+        <div className={styles.detailContainer}>
+          <small>{data.detail}</small>
         </div>  
       </a>
     </li>

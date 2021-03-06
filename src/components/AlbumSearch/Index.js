@@ -12,10 +12,10 @@ import EN from "../../EN.json";
 const AlbumSearch = () => {
   const [url, setUrl] = useState("");
 
-  const { setAlbums } = useAlbums();
+  const { parseAlbums } = useAlbums();
   const { setSearchQuery } = useSearchQuery();
   const { fetchError, fetchedData, fetchLoading } = useFetch(url);
-  const { error, setError } = useError();
+  const { setError } = useError();
 
   const history = useHistory();
   const { search: searchParam } = useLocation();
@@ -39,12 +39,12 @@ const AlbumSearch = () => {
 
   useEffect(() => {
     if (!fetchLoading && fetchedData.results) {
-      setAlbums(fetchedData.results);
+      parseAlbums(fetchedData.results);
     }
     if (!fetchLoading && fetchError) {
       setError(fetchError);
     }
-  }, [fetchError, fetchedData, fetchLoading, setAlbums, setError]);
+  }, [fetchError, fetchedData, fetchLoading, parseAlbums, setError]);
 
   return (
       <SearchForm
