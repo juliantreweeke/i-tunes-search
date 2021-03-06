@@ -1,3 +1,9 @@
 .searchStatus {
   margin-bottom: var(--space-lg);
 }
+
+.loadMoreButtonContainer {
+  display:flex;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+}

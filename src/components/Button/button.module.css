@@ -31,3 +31,14 @@
   left: 40%;
   top: 20%;
 }
+
+.button[data-variant="outline"]  {
+  background: transparent;
+  border: 1px solid var(--btn-primary-bg);
+  color: var(--btn-primary-bg);
+}
+
+.button[data-variant="outline"]:hover {
+  background-color: var(--btn-primary-bg);
+  color: var(--color-text-light);
+}
