@@ -4,7 +4,14 @@
   padding-top: var(--space-xs);
 }
 
+.searchbar .input_container .loadingContainer {
+  position: absolute;
+  top: 0px;
+  left:100%;
+}
+
 .searchbar .input_container {
+  position: relative;
   padding-right: var(--component-padding);
 }
 

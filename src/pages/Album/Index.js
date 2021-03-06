@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout/Index';
-import styles from './album.module.css';
 import { useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
 import useError from '../../hooks/useError';
+import LoadingSpinner from '../../components/LoadingSpinner/Index';
 import { resizeITunesImageURL } from '../../helpers/helpers';
 
 import { I_TUNES_BASE_URL } from '../../constants';
@@ -40,7 +39,7 @@ const Album = () => {
 
   return (
     <Layout>
-      {fetchLoading && <div>loading</div>}
+      {fetchLoading && <LoadingSpinner />}
       {error && <div>{fetchError}</div>}
       {album && 
         <div>
@@ -53,7 +52,6 @@ const Album = () => {
             )         
           })}
         </div>}
-
 
     </Layout>
   );

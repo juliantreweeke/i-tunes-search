@@ -19,9 +19,15 @@
   background-color: var(--btn-primary-hover);
 }
 
-.button:disabled{
+.button:disabled, .button[data-loading="true"] {
   background: var(--btn-disabled-bg);
   cursor: not-allowed;
   box-shadow: none;
   opacity: 0.6;
 } 
+
+.button[data-loading] .loadingSpinnerContainer {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+}

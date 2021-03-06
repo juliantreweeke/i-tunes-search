@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import React from "react";
+import LoadingSpinner from "../LoadingSpinner/Index";
 import styles from "./button.module.css";
 
-const Button = ({ children, variant, href, label, ...props }) => {
+const Button = ({ children, variant, href, label, loading, ...props }) => {
   const HyperLinkButton = (
     <a
       href={href}
@@ -15,7 +16,12 @@ const Button = ({ children, variant, href, label, ...props }) => {
   );
 
   const StandardButton = (
-    <button {...props} className={styles.button} data-variant={variant}>
+    <button {...props} className={styles.button} data-variant={variant} data-loading={loading}>
+      {loading && 
+        <div className={styles.loadingSpinnerContainer}>
+          <LoadingSpinner size="small" />
+        </div>
+        }
       {children}
     </button>
   );
