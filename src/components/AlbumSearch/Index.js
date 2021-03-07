@@ -33,7 +33,7 @@ const AlbumSearch = () => {
   useEffect(() => {
     if (!fetchedData.results && searchParam) {
       const URLSearchQuery = new URLSearchParams(searchParam).get("search");
-      setUrlSearchQuery(URLSearchQuery);
+      URLSearchQuery && setUrlSearchQuery(URLSearchQuery);
     }
   })
 

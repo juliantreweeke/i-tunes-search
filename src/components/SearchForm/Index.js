@@ -8,13 +8,11 @@ import EN from "../../EN.json";
 
 const SearchForm = ({ loading, placeholder, handleSearch }) => {
   const fieldName = "searchQuery";
-  const initialFieldValues = { searchQuery: "" };
 
   const { inputs, handleInputChange, handleKeyPress, handleSubmit } = useForm(
-    handleSearch,
-    initialFieldValues
+    handleSearch
   );
-  
+
   const isButtonDisabled = isObjectEmpty(inputs);
 
   return (
@@ -30,7 +28,7 @@ const SearchForm = ({ loading, placeholder, handleSearch }) => {
           placeholder={placeholder || EN.DEFAULT_SEARCH_PLACEHOLDER}
           name={fieldName}
           onChange={handleInputChange}
-          value={inputs[initialFieldValues]}
+          value={inputs.fieldName}
           onKeyPress={handleKeyPress}
         />
       </div>

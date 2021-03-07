@@ -51,7 +51,7 @@ const Home = () => {
   }
 
   const setCardFocus = (albumToFocus) => {
-    cardDeckRef.current.children[albumToFocus].firstChild.focus();
+    cardDeckRef.current.children[albumToFocus]?.firstChild.focus();
   }
 
   return (

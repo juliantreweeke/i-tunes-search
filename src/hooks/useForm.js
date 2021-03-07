@@ -1,21 +1,28 @@
 import { useState } from "react";
+import { isObjectEmpty } from "../helpers/helpers";
 
-const useForm = (callback, initialFieldValues) => {
+const useForm = (callback) => {
   const [inputs, setInputs] = useState({});
+
+  const handleCallBack = () => {
+    if (isObjectEmpty(inputs)){
+      return;
+    }
+    callback(inputs);
+    setInputs({});
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     event.target.reset();
-    callback(inputs);
-    setInputs(initialFieldValues);
+    handleCallBack();
   };
 
   const handleKeyPress = (event) => {
     if (event?.key === "Enter") {
       event.preventDefault();
       event.target.value = "";
-      callback(inputs);
-      setInputs(initialFieldValues);
+      handleCallBack();
     }
   };
 
