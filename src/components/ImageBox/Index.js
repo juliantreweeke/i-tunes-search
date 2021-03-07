@@ -18,10 +18,10 @@ const ImageBox = ({ data, loading }) => (
             {data.title}
           </Heading>
           <p className={styles.text}>{data.text}</p>
-          <p className={styles.text}>{data.detail}</p>
+          <p className={styles.detail}>{data.detail}</p>
           {data.url && (
             <div className={styles.buttonContainer}>
-              <Button data-variant="outline" href={data.url} label={data.title}>
+              <Button href={data.url} label={data.title}>
                 {data.urlText}
               </Button>
             </div>
