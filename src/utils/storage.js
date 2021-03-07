@@ -1,42 +1,41 @@
 function storageFactory(getStorage) {
-    const isSupported = () => {
-      try {
-        const key = 'test_key';
-        getStorage().setItem(key, key);
-        getStorage().removeItem(key);
-        return true;
-      } catch (e) {
-        return false;
-      }
-    };
-  
-    function getItem(name) {
-      if (isSupported()) {
-        return getStorage().getItem(name);
-      }
-      return null;
+  const isSupported = () => {
+    try {
+      const key = "test_key";
+      getStorage().setItem(key, key);
+      getStorage().removeItem(key);
+      return true;
+    } catch (e) {
+      return false;
     }
-  
-    function removeItem(name) {
-      if (isSupported()) {
-        return getStorage().removeItem(name);
-      }
-      return null;
+  };
+
+  function getItem(name) {
+    if (isSupported()) {
+      return getStorage().getItem(name);
     }
-  
-    function setItem(name, value) {
-      if (isSupported()) {
-        return getStorage().setItem(name, value);
-      }
-      return null;
-    }
-  
-    return {
-      getItem,
-      removeItem,
-      setItem,
-    };
+    return null;
   }
-  
-  export const sessionStore = storageFactory(() => sessionStorage);
-  
+
+  function removeItem(name) {
+    if (isSupported()) {
+      return getStorage().removeItem(name);
+    }
+    return null;
+  }
+
+  function setItem(name, value) {
+    if (isSupported()) {
+      return getStorage().setItem(name, value);
+    }
+    return null;
+  }
+
+  return {
+    getItem,
+    removeItem,
+    setItem,
+  };
+}
+
+export const sessionStore = storageFactory(() => sessionStorage);
