@@ -1,4 +1,5 @@
 import {
+  RESET_FOCUS_AND_DISPLAY_NUMBER,
   SET_ALBUM_FOCUS_FROM_STORAGE,
   SET_DISPLAYED_ALBUMS,
   SET_ALBUMS,
@@ -8,6 +9,12 @@ import { DEFAULT_ALBUMS_TO_DISPLAY } from "../../constants";
 
 export const albums = (state = {}, action) => {
   switch (action.type) {
+    case RESET_FOCUS_AND_DISPLAY_NUMBER:
+      return {
+        ...state,
+        albumToFocus: null,
+        numberOfAlbumsToDisplay: DEFAULT_ALBUMS_TO_DISPLAY,   
+      };
     case SET_NUMBER_OF_ALBUMS_TO_DISPLAY:
       return {
         ...state,

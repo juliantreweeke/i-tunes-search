@@ -1,4 +1,5 @@
 import {
+  RESET_FOCUS_AND_DISPLAY_NUMBER,
   SET_ALBUMS,
   SET_DISPLAYED_ALBUMS,
   SET_ALBUM_FOCUS_FROM_STORAGE,
@@ -33,6 +34,15 @@ const parseAlbums = (data) => {
     dispatch(setAlbums(parsedData));
   };
 }
+
+const resetFocusAndDisplayNumber = (data) => {
+  return {
+    type: RESET_FOCUS_AND_DISPLAY_NUMBER,
+    payload: {
+      data,
+    },
+  };
+};
 
 const setAlbums = (data) => {
   return {
@@ -96,6 +106,7 @@ const setAlbumFocusFromStorage = () => {
 const albumsActions = {
   initAlbums,
   parseAlbums,
+  resetFocusAndDisplayNumber,
   setAlbums,
   setAlbumFocusFromStorage,
   setDisplayedAlbums,

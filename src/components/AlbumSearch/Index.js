@@ -12,7 +12,7 @@ import EN from "../../EN.json";
 const AlbumSearch = () => {
   const [url, setUrl] = useState("");
 
-  const { parseAlbums } = useAlbums();
+  const { parseAlbums, resetFocusAndDisplayNumber } = useAlbums();
   const { setSearchQuery } = useSearchQuery();
   const { fetchError, fetchedData, fetchLoading } = useFetch(url);
   const { setError } = useError();
@@ -26,6 +26,7 @@ const AlbumSearch = () => {
   };
 
   const handleSearch = ({ searchQuery }) => {
+    resetFocusAndDisplayNumber();
     setUrlSearchQuery(searchQuery);
     history.replace(`/?search=${searchQuery}`);
   };

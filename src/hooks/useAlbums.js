@@ -21,6 +21,11 @@ const useAlbums = () => {
     [dispatch]
   );
 
+  const resetFocusAndDisplayNumber = useCallback(
+    () => dispatch(actions.albumsActions.resetFocusAndDisplayNumber()),
+    [dispatch]
+  );
+
   const setDisplayedAlbums = useCallback(
     (data) => dispatch(actions.albumsActions.setDisplayedAlbums(data)),
     [dispatch]
@@ -32,6 +37,7 @@ const useAlbums = () => {
     displayedAlbums,
     initAlbums,
     parseAlbums,
+    resetFocusAndDisplayNumber,
     setDisplayedAlbums,
   };
 };
