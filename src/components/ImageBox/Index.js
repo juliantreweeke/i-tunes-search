@@ -17,7 +17,7 @@ const ImageBox = ({ image, alt, loading }) => (
 );
 
 ImageBox.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
   loading: PropTypes.bool,
 };
 

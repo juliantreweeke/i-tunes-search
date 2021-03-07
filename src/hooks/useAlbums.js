@@ -16,13 +16,8 @@ const useAlbums = () => {
     [dispatch]
   );
 
-  const setAlbumFocusFromStorage = useCallback(
-    (data) => dispatch(actions.albumsActions.setAlbumFocusFromStorage(data)),
-    [dispatch]
-  );
-
-  const setNumberOfAlbumsToDisplay = useCallback(
-    (data) => dispatch(actions.albumsActions.setNumberOfAlbumsToDisplay(data)),
+  const initAlbums = useCallback(
+    () => dispatch(actions.albumsActions.initAlbums()),
     [dispatch]
   );
 
@@ -35,11 +30,12 @@ const useAlbums = () => {
     albums,
     albumToFocus,
     displayedAlbums,
+    initAlbums,
     parseAlbums,
-    setAlbumFocusFromStorage,
     setDisplayedAlbums,
-    setNumberOfAlbumsToDisplay
   };
 };
 
 export default useAlbums;
+
+

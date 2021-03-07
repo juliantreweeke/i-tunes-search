@@ -15,15 +15,13 @@ const Home = () => {
     albums,
     albumToFocus,
     displayedAlbums,
+    initAlbums,
     setDisplayedAlbums,
-    setAlbumFocusFromStorage,
-    setNumberOfAlbumsToDisplay
   } = useAlbums();
 
   useEffect(() => {
-    setAlbumFocusFromStorage()
-    setNumberOfAlbumsToDisplay();
-  }, [setAlbumFocusFromStorage, setNumberOfAlbumsToDisplay]);
+    initAlbums();
+  }, [initAlbums]);
 
   useEffect(() => {
     if(albumToFocus && albums){

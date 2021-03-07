@@ -11,6 +11,13 @@ import {
   truncateString,
   resizeITunesImageURL
 } from "../../helpers/helpers";
+
+const initAlbums = () => {
+  return (dispatch) => {
+    dispatch(setAlbumFocusFromStorage());
+    dispatch(setNumberOfAlbumsToDisplay());
+  };
+}
   
 const parseAlbums = (data) => {
   return (dispatch) => {
@@ -87,6 +94,7 @@ const setAlbumFocusFromStorage = () => {
 };
 
 const albumsActions = {
+  initAlbums,
   parseAlbums,
   setAlbums,
   setAlbumFocusFromStorage,

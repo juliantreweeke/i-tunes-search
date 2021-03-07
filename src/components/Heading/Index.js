@@ -14,7 +14,7 @@ const Heading = ({ children, headingLevel, variant, size }) => {
 };
 
 Heading.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   headingLevel: PropTypes.string.isRequired,
   variant: PropTypes.string,
 };
