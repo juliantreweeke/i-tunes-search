@@ -9,6 +9,7 @@ describe('The useSearchQuery hook', () => {
         const { result } = renderHook(() => useSearchQuery(), {
             wrapper: ({ children }) => <Provider store={store}>{children}</Provider>
         });
+
         expect(result.current.searchQuery).toEqual('');
     });
 
@@ -16,10 +17,13 @@ describe('The useSearchQuery hook', () => {
         const { result } = renderHook(() => useSearchQuery(), {
             wrapper: ({ children }) => <Provider store={store}>{children}</Provider>
         });
+
         const searchQuery = 'this is a search query';
+
         act(() => {
             result.current.setSearchQuery(searchQuery);
         })
+        
         expect(result.current.searchQuery).toEqual(searchQuery);
     });
 });

@@ -11,6 +11,7 @@ describe("helpers", () => {
       const mockDateString = "2020-03-18T12:00:00Z";
       const result = formatDateStringToYear(mockDateString);
       const expectedResult = "2020";
+
       expect(result).toEqual(expectedResult);
     });
   });
@@ -18,6 +19,7 @@ describe("helpers", () => {
   describe("isObjectEmpty()", () => {
     it("returns false if Object is not empty", () => {
       const mockObject = { searchQuery: "music" };
+
       expect(isObjectEmpty(mockObject)).toEqual(false);
     });
 
@@ -32,12 +34,14 @@ describe("helpers", () => {
         "This is a really long string that needs to be trimmed";
       const result = truncateString(mockString);
       const expectedResult = "This is a really long string that needs ...";
+
       expect(result).toEqual(expectedResult);
     });
 
     it("does not truncates string if under character limit", () => {
       const mockString = "This is a short string";
       const result = truncateString(mockString);
+
       expect(result).toEqual(mockString);
     });
   });
@@ -47,6 +51,7 @@ describe("helpers", () => {
       const THREE_MINS_IN_MILLISECONDS = 180000;
       const result = millisecondsToMinutes(THREE_MINS_IN_MILLISECONDS);
       const expectedResult = "3:00";
+      
       expect(result).toEqual(expectedResult);
     });
   });

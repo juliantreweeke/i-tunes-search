@@ -11,7 +11,7 @@ const Card = ({ data, onClick }) => {
         <div className={styles.imageContainer}>
           <img
             src={data.image}
-            alt={data.collectionName}
+            alt={data.heading}
           />
         </div>
         <div className={styles.text}> 

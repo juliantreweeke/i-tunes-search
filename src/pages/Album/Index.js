@@ -48,7 +48,6 @@ const Album = () => {
             >
               {album.title}
             </Heading>
-
             <p className={styles.text}>
               <strong>{album.text}</strong> - {album.detail}
             </p>

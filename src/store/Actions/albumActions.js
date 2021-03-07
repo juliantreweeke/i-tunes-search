@@ -11,8 +11,10 @@ const parseAlbum = (data) => {
 
     const parsedTrackList = trackList.map((track) => {
       return {
-        title: track.trackName,
-        text: millisecondsToMinutes(track.trackTimeMillis),
+        title: track.artistName,
+        text: track.trackName,
+        detail: millisecondsToMinutes(track.trackTimeMillis),
+        image: track.artworkUrl100
       };
     });
 
