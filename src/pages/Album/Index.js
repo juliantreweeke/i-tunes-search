@@ -4,7 +4,11 @@ import { useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
 import useAlbum from '../../hooks/useAlbum';
 import useError from '../../hooks/useError';
+import List from '../../components/List/Index';
 import ImageBox from '../../components/ImageBox/Index';
+import Heading from '../../components/Heading/Index';
+import EN from '../../EN.json';
+
 import styles from "./album.module.css";
 
 import { I_TUNES_BASE_URL } from '../../constants';
@@ -33,7 +37,13 @@ const Album = () => {
   return (
     <Layout>
       <section className={styles.album}>
-        <ImageBox data={album} loading={fetchLoading} />
+        <ImageBox data={album} loading={fetchLoading} headingLevel={'h2'} />
+        <section className={styles.trackList}> 
+          <Heading size="medium" headingLevel="h3">
+            {EN.TRACK_LIST}
+          </Heading>
+          <List data={album.trackList} />
+        </section>
       </section>
     </Layout>
   );

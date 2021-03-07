@@ -1,0 +1,12 @@
+.list {
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+}
+
+.list .item {
+    border: 1px solid var(--color-border);
+    padding: var(--space-xxs) var(--space-sm);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

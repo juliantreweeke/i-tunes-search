@@ -1,6 +1,6 @@
 
 .imageBoxContainer { 
-  margin: var(--space-lg) 0;
+  /* margin: var(--space-lg) 0; */
 }
   .imageBox {
     border: 1px solid #ccc;

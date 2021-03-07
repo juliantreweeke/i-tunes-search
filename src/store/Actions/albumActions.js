@@ -9,8 +9,7 @@ const parseAlbum = (data) => {
     const parsedTrackList = trackList.map((track) => {
       return {
         title: track.trackName,
-        text: track.primaryGenreName,
-        detail: track.trackTimeMillis,
+        text: track.trackTimeMillis,
       };
     });
 

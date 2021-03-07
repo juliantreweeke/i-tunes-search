@@ -1,5 +1,7 @@
 .album {
+  margin: var(--space-lg) 0; 
   display: grid;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--space-md);
+  
 }

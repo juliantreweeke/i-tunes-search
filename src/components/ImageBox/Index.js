@@ -6,7 +6,7 @@ import Heading from "../Heading/Index";
 
 import styles from "./imageBox.module.css";
 
-const ImageBox = ({ data, loading }) => (
+const ImageBox = ({ data, loading, headingLevel }) => (
   <div className={styles.imageBoxContainer}>
     {loading ? (
       <LoadingSpinner />
@@ -14,7 +14,7 @@ const ImageBox = ({ data, loading }) => (
       <div className={styles.imageBox}>
         <img className={styles.image} alt={data.title} src={data.image} />
         <div className={styles.content}>
-          <Heading size="large" className={styles.heading} headingLevel="h2">
+          <Heading size="large" className={styles.heading} headingLevel={headingLevel}>
             {data.title}
           </Heading>
           <p className={styles.text}>{data.text}</p>
@@ -35,6 +35,7 @@ const ImageBox = ({ data, loading }) => (
 ImageBox.propTypes = {
   data: PropTypes.object.isRequired,
   loading: PropTypes.bool,
+  headingLevel: PropTypes.string
 };
 
 export default ImageBox;
