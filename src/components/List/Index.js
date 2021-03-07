@@ -4,7 +4,7 @@ import styles from "./list.module.css";
 
 const List = ({ data }) => {
   return (
-    <ul>
+    <ul className={styles.list}>
       {data &&
         data.map((item, index) => {
           return (

@@ -1,18 +1,26 @@
-.item {
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list .item {
     border: 1px solid var(--color-border);
     padding: var(--space-xxs) var(--space-sm);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.content {
+.list .content {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.image {
+.list .image {
     margin-right: var(--space-md);
 }
