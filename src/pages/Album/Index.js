@@ -51,11 +51,13 @@ const Album = () => {
             <p className={styles.text}>
               <strong>{album.text}</strong> - {album.detail}
             </p>
-            <div className={styles.buttonContainer}>
-              <Button href={album.url} label={album.title}>
-                {EN.BUY_ALBUM}
-              </Button>
-            </div>
+            {album.url && (
+              <div className={styles.buttonContainer}>
+                <Button href={album.url} label={album.title}>
+                  {EN.BUY_ALBUM}
+                </Button>
+              </div>
+            )}
           </div>
         </section>
         <section>
