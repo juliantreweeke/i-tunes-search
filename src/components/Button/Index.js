@@ -10,6 +10,8 @@ const Button = ({ children, variant, href, label, loading, ...props }) => {
       aria-label={label}
       className={styles.button}
       data-variant={variant}
+      target="_blank"
+      rel="noreferrer"
     >
       {children}
     </a>

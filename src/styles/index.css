@@ -4,6 +4,8 @@
 
 :root {
   --radius: 8px;
+  --box-shadow: 0px 1px 15px -2px;
+  --box-shadow-light: 2px 2px 6px 0px;
 }
 
 body {

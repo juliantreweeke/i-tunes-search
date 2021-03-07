@@ -1,58 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../../components/Layout/Index';
 import { useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
+import useAlbum from '../../hooks/useAlbum';
 import useError from '../../hooks/useError';
-import LoadingSpinner from '../../components/LoadingSpinner/Index';
-import { resizeITunesImageURL } from '../../helpers/helpers';
+import ImageBox from '../../components/ImageBox/Index';
+import styles from "./album.module.css";
 
 import { I_TUNES_BASE_URL } from '../../constants';
 
 
 const Album = () => {
-  const [album, setAlbum] = useState('');
-  const [trackList, setTrackList] = useState('');
+  const { album, parseAlbum } = useAlbum();
 
   const { id } = useParams();
   const url = `${I_TUNES_BASE_URL}lookup?id=${id}&entity=song`;
 
   const { fetchError, fetchedData, fetchLoading } = useFetch(url);
-  const { error, setError } = useError();
+  const { setError } = useError();
 
   useEffect(() => {
     if (!fetchLoading && fetchedData.results) {
-      const [album, ...trackList] = fetchedData.results;
-      
-      setAlbum({
-        ...album,
-        image: resizeITunesImageURL(album.artworkUrl100, 500)
-      });
-      
-      setTrackList(trackList);
+      parseAlbum(fetchedData.results);
     } 
 
     if (!fetchLoading && fetchError){
       setError(fetchError);
     }
-  }, [fetchedData, fetchError, fetchLoading, setError]);
+  }, [fetchedData, fetchError, fetchLoading, setError, parseAlbum]);
 
 
   return (
     <Layout>
-      {fetchLoading && <LoadingSpinner />}
-      {error && <div>{fetchError}</div>}
-      {album && 
-        <div>
-          <h1>{album.collectionCensoredName}</h1>
-          <img alt={album.collectionCensoredName} src={album.image} />
-          <a target="_blank" rel="noreferrer" href={album.collectionViewUrl}>BUY</a>
-          {trackList.map((track,index) => {
-            return (
-              <p>{track.trackName}</p>
-            )         
-          })}
-        </div>}
-
+      <section className={styles.album}>
+        <ImageBox data={album} loading={fetchLoading} />
+      </section>
     </Layout>
   );
 };

@@ -57,7 +57,7 @@ const Home = () => {
   return (
     <Layout>
       {albums && (
-        <>
+        <section>
           <div role="alert" className={styles.searchStatus}>
             <p>
               You searched for <strong>{searchQuery}</strong> which has{" "}
@@ -70,7 +70,7 @@ const Home = () => {
               <Button variant="outline" onKeyPress={handleLoadMore} onClick={handleLoadMore}>{EN.LOAD_MORE}</Button>
             </div>
           )}
-        </>
+        </section>
       )}
     </Layout>
   );

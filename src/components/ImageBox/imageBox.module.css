@@ -1,0 +1,35 @@
+
+.imageBoxContainer { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-lg);
+  }
+  .imageBox {
+    border: 1px solid #ccc;
+    box-shadow: var(--box-shadow-light);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    
+  }
+  .imageBox .image {
+    max-width: 100%;
+  }
+  .imageBox .content {
+    text-align: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .imageBox .text {
+      font-size: var(--text-md);
+  }
+
+  .imageBox .detail {
+    font-size: var(--text-sm);
+}
+
+  .imageBox .buttonContainer {
+      margin-top: auto;
+  }
