@@ -8,6 +8,7 @@ describe('storage', () => {
         const result = sessionStore.getItem('key');
         expect(result).toBe(null);
       });
+
       it('returns correct value if supported', () => {
         Storage.prototype.setItem = jest.fn();
         Storage.prototype.removeItem = jest.fn();
@@ -22,6 +23,7 @@ describe('storage', () => {
         const result = sessionStore.removeItem();
         expect(result).toBe(null);
       });
+
       it('returns correct value if supported', () => {
         Storage.prototype.setItem = jest.fn();
         Storage.prototype.removeItem = jest.fn();
@@ -35,6 +37,7 @@ describe('storage', () => {
         const result = sessionStore.setItem(2);
         expect(result).toBe(null);
       });
+      
       it('returns correct value if supported', () => {
         Storage.prototype.setItem = jest.fn(() => 2);
         Storage.prototype.removeItem = jest.fn();
