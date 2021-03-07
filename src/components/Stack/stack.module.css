@@ -1,7 +1,0 @@
-.stack > * {
-    margin-bottom: var(--gutter);
-}
-
-.stack > *:last-child {
-    margin-bottom: var(--gutter-end);
-}

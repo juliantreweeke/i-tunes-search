@@ -4,5 +4,5 @@ export const ERROR_TYPES = {
 export const ERROR_MESSAGES = {
   UNKNOWN: "An unknown error occurred, please try refreshing",
   SEARCH_ERROR:
-    "Oops...sorry something went wrong when searching, please try again",
+    "Oops...sorry something went wrong when searching, please try a different search",
 };

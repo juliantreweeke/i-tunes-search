@@ -4,7 +4,6 @@ import styles from "./card.module.css";
 import Heading from "../Heading/Index";
 
 const Card = ({ data, onClick }) => {
-
   return (
     <li onClick={onClick} className={styles.card}>
       <a href={data.url}>

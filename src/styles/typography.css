@@ -2,11 +2,9 @@
   --font-primary: sans-serif;
   --font-secondary: serif;
 
-  /* base values */
   --text-base-size: 1em;
   --text-scale-ratio: 1.2;
 
-  /* type scale */
   --text-sm: calc(1em / var(--text-scale-ratio));
   --text-md: calc(1em * var(--text-scale-ratio));
   --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));

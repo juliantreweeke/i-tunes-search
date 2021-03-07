@@ -17,12 +17,10 @@
     --color-border: var(--color-grey);
     --color-error: var(--color-red);
 
-    /* buttons */
     --btn-primary-bg: var(--color-primary);
     --btn-primary-hover: var(--color-primary-light);
     --btn-primary-active: var(--color-primary-dark);
     --btn-primary-label: var(--white);
-
     --btn-disabled-bg: var(--color-grey);
     --btn-disabled-label: var(--gray-10);
 }

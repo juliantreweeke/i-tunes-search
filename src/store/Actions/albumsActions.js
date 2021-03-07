@@ -7,7 +7,8 @@ import {
 } from "../Types";
 import { sessionStore } from "../../utils/storage";
 import { SESSION_STORAGE_KEYS } from "../../constants";
-import { 
+import {
+  filterArrOfObjectsByKey,
   formatDateStringToYear, 
   truncateString,
   resizeITunesImageURL
@@ -21,8 +22,11 @@ const initAlbums = () => {
 }
   
 const parseAlbums = (data) => {
+
+  const albumsFilteredByCollection = filterArrOfObjectsByKey(data, 'collectionId');
+
   return (dispatch) => {
-    const parsedData = data.map((album) => {
+    const parsedData = albumsFilteredByCollection.map((album) => {
       return {
         url: `/album/${album.collectionId}`,
         image: resizeITunesImageURL(album.artworkUrl100, 250),

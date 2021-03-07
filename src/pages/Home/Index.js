@@ -56,8 +56,8 @@ const Home = () => {
     <Layout>
       {albums && (
         <section>
-          <div role="alert" className={styles.searchStatus}>
-            <p>
+          <div className={styles.searchStatus}>
+            <p role="alert">
               You searched for <strong>{searchQuery}</strong> which has{" "}
               <strong>{albums.length}</strong> results
             </p>

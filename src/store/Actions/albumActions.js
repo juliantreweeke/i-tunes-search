@@ -22,7 +22,7 @@ const parseAlbum = (data) => {
       detail: formatDateStringToYear(album.releaseDate),
       title: album.collectionName,
       text: album.artistName,
-      image: resizeITunesImageURL(album.artworkUrl100, 500),
+      image: resizeITunesImageURL(album.artworkUrl100, 400),
       url: album.artistViewUrl,
       trackList: parsedTrackList,
     };

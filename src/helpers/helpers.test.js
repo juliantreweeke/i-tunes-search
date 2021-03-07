@@ -1,4 +1,5 @@
 import {
+  filterArrOfObjectsByKey,
   formatDateStringToYear,
   isObjectEmpty,
   truncateString,
@@ -6,6 +7,25 @@ import {
 } from "./helpers";
 
 describe("helpers", () => {
+  describe("filterArrOfObjectsByKey()", () => {
+    it("returns an array an objects filtered by a specified key", () => {
+      const mockArray = [
+        {artistName: 'Kavinsky', collectionId: 555123 },
+        {artistName: 'Kavinsky', collectionId: 555123 },
+        {artistName: 'Lazerhawk', collectionId: 123456 },
+      ]
+
+      const expectedResult = [
+        {artistName: 'Kavinsky', collectionId: 555123 },
+        {artistName: 'Lazerhawk', collectionId: 123456 },
+      ]
+
+      const result = filterArrOfObjectsByKey(mockArray, 'collectionId');
+
+      expect(result).toEqual(expectedResult);
+    });
+  });
+
   describe("formatDateStringToYear()", () => {
     it("returns expected value", () => {
       const mockDateString = "2020-03-18T12:00:00Z";

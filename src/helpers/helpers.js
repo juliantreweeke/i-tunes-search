@@ -1,5 +1,14 @@
 import { CHARACTER_LIMIT } from "./constants";
 
+export const filterArrOfObjectsByKey = (array, key) => {
+  const filteredArray = array.filter(
+    (array, index, self) =>
+      index ===
+      self.findIndex((arrayToCompare) => arrayToCompare[key] === array[key])
+  );
+  return filteredArray;
+};
+
 export const formatDateStringToYear = (dateString) => {
   const options = { year: "numeric" };
   return new Date(dateString).toLocaleDateString(undefined, options);
