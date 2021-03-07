@@ -1,4 +1,9 @@
-import { formatDateString, isObjectEmpty, truncateString } from "./helpers";
+import {
+  formatDateString,
+  isObjectEmpty,
+  truncateString,
+  millisecondsToMinutes,
+} from "./helpers";
 
 describe("helpers", () => {
   describe("formatDateString()", () => {
@@ -22,17 +27,27 @@ describe("helpers", () => {
   });
 
   describe("truncateString()", () => {
-    it("truncates string if  over character limit", () => {
+    it("truncates string if over character limit", () => {
       const mockString =
         "This is a really long string that needs to be trimmed";
       const result = truncateString(mockString);
       const expectedResult = "This is a really long string that needs ...";
       expect(result).toEqual(expectedResult);
     });
+
     it("does not truncates string if under character limit", () => {
       const mockString = "This is a short string";
       const result = truncateString(mockString);
       expect(result).toEqual(mockString);
+    });
+  });
+
+  describe("millisecondsToMinutes()", () => {
+    it("converts milliseconds to readable format in minutes", () => {
+      const THREE_MINS_IN_MILLISECONDS = 180000;
+      const result = millisecondsToMinutes(THREE_MINS_IN_MILLISECONDS);
+      const expectedResult = "3:00";
+      expect(result).toEqual(expectedResult);
     });
   });
 });

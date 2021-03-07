@@ -1,5 +1,9 @@
 import { SET_ALBUM } from "../Types";
-import { formatDateString, resizeITunesImageURL } from "../../helpers/helpers";
+import {
+  formatDateString,
+  resizeITunesImageURL,
+  millisecondsToMinutes,
+} from "../../helpers/helpers";
 
 const parseAlbum = (data) => {
   return (dispatch) => {
@@ -8,7 +12,7 @@ const parseAlbum = (data) => {
     const parsedTrackList = trackList.map((track) => {
       return {
         title: track.trackName,
-        text: track.trackTimeMillis,
+        text: millisecondsToMinutes(track.trackTimeMillis),
       };
     });
 
