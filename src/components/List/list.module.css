@@ -1,6 +1,7 @@
 .list {
     border: 1px solid #ccc;
     border-radius: var(--radius);
+    width: 200%;
 }
 
 .list .item {

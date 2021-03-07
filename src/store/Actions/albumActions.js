@@ -1,5 +1,4 @@
 import { SET_ALBUM } from "../Types";
-import EN from '../../EN.json';
 import { formatDateString, resizeITunesImageURL } from "../../helpers/helpers";
 
 const parseAlbum = (data) => {
@@ -19,7 +18,6 @@ const parseAlbum = (data) => {
       text: album.artistName,
       image: resizeITunesImageURL(album.artworkUrl100, 500),
       url: album.artistViewUrl,
-      urlText: EN.BUY_ALBUM,
       trackList: parsedTrackList,
     };
     dispatch(setAlbum(parsedData));

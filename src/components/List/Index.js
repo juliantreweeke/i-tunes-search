@@ -3,11 +3,6 @@ import React from "react";
 import styles from "./list.module.css";
 
 const List = ({ data }) => {
-  console.log(data);
-
-  // title: track.trackName,
-  //       text: track.primaryGenreName,
-  //       detail: track.trackTimeMillis,
 
   return (
     <ul className={styles.list}>

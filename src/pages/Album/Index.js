@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
 import useAlbum from '../../hooks/useAlbum';
 import useError from '../../hooks/useError';
+import Button from '../../components/Button/Index';
+
 import List from '../../components/List/Index';
 import ImageBox from '../../components/ImageBox/Index';
 import Heading from '../../components/Heading/Index';
@@ -37,11 +39,23 @@ const Album = () => {
   return (
     <Layout>
       <section className={styles.album}>
-        <ImageBox data={album} loading={fetchLoading} headingLevel={'h2'} />
-        <section className={styles.trackList}> 
-          <Heading size="medium" headingLevel="h3">
-            {EN.TRACK_LIST}
+        <ImageBox alt={album.title} image={album.image} loading={fetchLoading} />
+          <div className={styles.info}>
+          <Heading size="massive" className={styles.heading} headingLevel="h2">
+            {album.title}
           </Heading>
+
+          <p className={styles.text}><strong>{album.text}</strong> - {album.detail}</p>
+            <div className={styles.buttonContainer}>
+              <Button href={album.url} label={album.title}>
+                { EN.BUY_ALBUM }
+              </Button>
+            </div>
+          </div>
+        <section>
+        <Heading size="medium" headingLevel="h3">
+            {EN.TRACK_LIST}
+        </Heading>
           <List data={album.trackList} />
         </section>
       </section>
