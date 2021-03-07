@@ -1,6 +1,6 @@
 import { SET_ALBUM } from "../Types";
 import {
-  formatDateString,
+  formatDateStringToYear,
   resizeITunesImageURL,
   millisecondsToMinutes,
 } from "../../helpers/helpers";
@@ -17,7 +17,7 @@ const parseAlbum = (data) => {
     });
 
     const parsedData = {
-      detail: formatDateString(album.releaseDate),
+      detail: formatDateStringToYear(album.releaseDate),
       title: album.collectionName,
       text: album.artistName,
       image: resizeITunesImageURL(album.artworkUrl100, 500),

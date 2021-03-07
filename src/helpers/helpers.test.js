@@ -1,16 +1,16 @@
 import {
-  formatDateString,
+  formatDateStringToYear,
   isObjectEmpty,
   truncateString,
   millisecondsToMinutes,
 } from "./helpers";
 
 describe("helpers", () => {
-  describe("formatDateString()", () => {
-    it("returns excepted value", () => {
+  describe("formatDateStringToYear()", () => {
+    it("returns expected value", () => {
       const mockDateString = "2020-03-18T12:00:00Z";
-      const result = formatDateString(mockDateString);
-      const expectedResult = "18 March 2020";
+      const result = formatDateStringToYear(mockDateString);
+      const expectedResult = "2020";
       expect(result).toEqual(expectedResult);
     });
   });

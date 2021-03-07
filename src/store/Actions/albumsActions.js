@@ -8,7 +8,7 @@ import {
 import { sessionStore } from "../../utils/storage";
 import { SESSION_STORAGE_KEYS } from "../../constants";
 import { 
-  formatDateString, 
+  formatDateStringToYear, 
   truncateString,
   resizeITunesImageURL
 } from "../../helpers/helpers";
@@ -28,7 +28,7 @@ const parseAlbums = (data) => {
         image: resizeITunesImageURL(album.artworkUrl100, 250),
         heading: truncateString(album.collectionName),
         text: truncateString(album.artistName),
-        detail: formatDateString(album.releaseDate),
+        detail: formatDateStringToYear(album.releaseDate),
       }
     })
     dispatch(setAlbums(parsedData));

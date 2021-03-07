@@ -1,7 +1,7 @@
 import { CHARACTER_LIMIT } from "./constants";
 
-export const formatDateString = (dateString) => {
-  const options = { year: "numeric", month: "long", day: "numeric" };
+export const formatDateStringToYear = (dateString) => {
+  const options = { year: "numeric" };
   return new Date(dateString).toLocaleDateString(undefined, options);
 };
 
