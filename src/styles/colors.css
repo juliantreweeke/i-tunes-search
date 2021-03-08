@@ -3,14 +3,11 @@
   --color-grey: #817f75;
   --color-blue: #009ddc;
   --color-blue-light: #5cc3eb;
-
   --color-white: #ffffff;
-  --color-rose: #fb586f;
   --color-red: #f5414f;
 
   --color-primary: var(--color-blue);
   --color-primary-light: var(--color-blue-light);
-  --color-secondary: var(--color-rose);
   --color-input: var(--color-white);
   --color-text-dark: var(--color-black);
   --color-text-light: var(--color-white);

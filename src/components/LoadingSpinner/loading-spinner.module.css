@@ -25,8 +25,6 @@
   font-size: calc(var(--text-sm) / 8);
 }
 
-
-
 @-webkit-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);

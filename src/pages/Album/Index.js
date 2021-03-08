@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Layout from "../../components/Layout/Index";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import useAlbum from "../../hooks/useAlbum";
 import useError from "../../hooks/useError";
+import Layout from "../../components/Layout/Index";
 import Button from "../../components/Button/Index";
 import List from "../../components/List/Index";
 import ImageBox from "../../components/ImageBox/Index";
@@ -74,7 +74,5 @@ const Album = () => {
     </Layout>
   );
 };
-
-Album.propTypes = {};
 
 export default Album;
