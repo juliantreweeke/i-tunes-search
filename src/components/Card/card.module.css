@@ -31,6 +31,13 @@
   max-width: 60ch;
 }
 
+.card .text h2, .card .text p {
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+} 
+
 .card .text p {
   margin:var(--space-xxs) 0px;
 }

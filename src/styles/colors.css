@@ -1,26 +1,26 @@
 :root {
-    --color-black:#170F11;
-    --color-grey: #817F75;
-    --color-blue: #009DDC;
-    --color-blue-light: #5cc3eb;
+  --color-black: #170f11;
+  --color-grey: #817f75;
+  --color-blue: #009ddc;
+  --color-blue-light: #5cc3eb;
 
-    --color-white:#FFFFFF;
-    --color-rose: #FB586F;
-    --color-red: #f5414f;
+  --color-white: #ffffff;
+  --color-rose: #fb586f;
+  --color-red: #f5414f;
 
-    --color-primary: var(--color-blue);
-    --color-primary-light: var(--color-blue-light);
-    --color-secondary: var(--color-rose);
-    --color-input: var(--color-white);
-    --color-text-dark: var(--color-black);
-    --color-text-light: var(--color-white);
-    --color-border: var(--color-grey);
-    --color-error: var(--color-red);
+  --color-primary: var(--color-blue);
+  --color-primary-light: var(--color-blue-light);
+  --color-secondary: var(--color-rose);
+  --color-input: var(--color-white);
+  --color-text-dark: var(--color-black);
+  --color-text-light: var(--color-white);
+  --color-border: var(--color-grey);
+  --color-error: var(--color-red);
 
-    --btn-primary-bg: var(--color-primary);
-    --btn-primary-hover: var(--color-primary-light);
-    --btn-primary-active: var(--color-primary-dark);
-    --btn-primary-label: var(--white);
-    --btn-disabled-bg: var(--color-grey);
-    --btn-disabled-label: var(--gray-10);
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-light);
+  --btn-primary-active: var(--color-primary-dark);
+  --btn-primary-label: var(--white);
+  --btn-disabled-bg: var(--color-grey);
+  --btn-disabled-label: var(--gray-10);
 }

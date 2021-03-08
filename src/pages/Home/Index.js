@@ -10,7 +10,6 @@ import { SESSION_STORAGE_KEYS } from "../../constants";
 import EN from "../../EN.json";
 
 const Home = () => {
-
   const {
     albums,
     albumToFocus,
@@ -24,7 +23,7 @@ const Home = () => {
   }, [initAlbums]);
 
   useEffect(() => {
-    if(albumToFocus && albums){
+    if (albumToFocus && albums) {
       setCardFocus(albumToFocus);
     }
   }, [albumToFocus, albums]);
@@ -34,9 +33,12 @@ const Home = () => {
   const displayLoadMoreButton = displayedAlbums?.length < albums?.length;
 
   const setCardIndexToStorage = (index) => {
-    sessionStore.setItem(SESSION_STORAGE_KEYS.albumsToDisplay, displayedAlbums.length);
+    sessionStore.setItem(
+      SESSION_STORAGE_KEYS.albumsToDisplay,
+      displayedAlbums.length
+    );
     sessionStore.setItem(SESSION_STORAGE_KEYS.album, index);
-  }
+  };
 
   const cardDeckRef = useRef(null);
 
@@ -46,11 +48,11 @@ const Home = () => {
       const lastCardInDeck = displayedAlbums.length - 1;
       setCardFocus(lastCardInDeck);
     }
-  }
+  };
 
   const setCardFocus = (albumToFocus) => {
     cardDeckRef.current.children[albumToFocus]?.firstChild.focus();
-  }
+  };
 
   return (
     <Layout>
@@ -62,10 +64,20 @@ const Home = () => {
               <strong>{albums.length}</strong> results
             </p>
           </div>
-          <CardDeck ref={cardDeckRef} onCardClicked={setCardIndexToStorage} data={displayedAlbums} />
+          <CardDeck
+            ref={cardDeckRef}
+            onCardClicked={setCardIndexToStorage}
+            data={displayedAlbums}
+          />
           {displayLoadMoreButton && (
             <div className={styles.loadMoreButtonContainer}>
-              <Button variant="outline" onKeyPress={handleLoadMore} onClick={handleLoadMore}>{EN.LOAD_MORE}</Button>
+              <Button
+                variant="outline"
+                onKeyPress={handleLoadMore}
+                onClick={handleLoadMore}
+              >
+                {EN.LOAD_MORE}
+              </Button>
             </div>
           )}
         </section>

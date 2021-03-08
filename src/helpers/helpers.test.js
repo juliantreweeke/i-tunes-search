@@ -2,7 +2,6 @@ import {
   filterArrOfObjectsByKey,
   formatDateStringToYear,
   isObjectEmpty,
-  truncateString,
   millisecondsToMinutes,
 } from "./helpers";
 
@@ -10,14 +9,16 @@ describe("helpers", () => {
   describe("filterArrOfObjectsByKey()", () => {
     it("returns an array an objects filtered by a specified key", () => {
       const mockArray = [
+        {artistName: 'Lazerhawk', collectionId: 123456 },
+        {artistName: 'Kavinsky', collectionId: 555123 },
         {artistName: 'Kavinsky', collectionId: 555123 },
         {artistName: 'Kavinsky', collectionId: 555123 },
         {artistName: 'Lazerhawk', collectionId: 123456 },
       ]
 
       const expectedResult = [
-        {artistName: 'Kavinsky', collectionId: 555123 },
         {artistName: 'Lazerhawk', collectionId: 123456 },
+        {artistName: 'Kavinsky', collectionId: 555123 },
       ]
 
       const result = filterArrOfObjectsByKey(mockArray, 'collectionId');
@@ -45,24 +46,6 @@ describe("helpers", () => {
 
     it("returns true if Object is empty", () => {
       expect(isObjectEmpty({})).toEqual(true);
-    });
-  });
-
-  describe("truncateString()", () => {
-    it("truncates string if over character limit", () => {
-      const mockString =
-        "This is a really long string that needs to be trimmed";
-      const result = truncateString(mockString);
-      const expectedResult = "This is a really long string that needs ...";
-
-      expect(result).toEqual(expectedResult);
-    });
-
-    it("does not truncates string if under character limit", () => {
-      const mockString = "This is a short string";
-      const result = truncateString(mockString);
-
-      expect(result).toEqual(mockString);
     });
   });
 

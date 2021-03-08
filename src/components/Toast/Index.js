@@ -23,7 +23,7 @@ const Toast = ({delay = 2500}) => {
     <>
       <div className={styles.toastContainer}>
         <div className={styles.toastNotification}>
-          <div>
+          <div role="alert">
             <p className={styles.toastTitle}>Error</p>
             <p className={styles.toastMessage}>{errorMessage}</p>
           </div>

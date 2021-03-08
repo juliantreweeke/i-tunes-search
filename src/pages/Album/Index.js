@@ -48,9 +48,11 @@ const Album = () => {
             >
               {album.title}
             </Heading>
-            <p className={styles.text}>
-              <strong>{album.text}</strong> - {album.detail}
-            </p>
+            {album.text && (
+              <p className={styles.text}>
+                <strong>{album.text}</strong> - {album.detail}
+              </p>
+            )}
             {album.url && (
               <div className={styles.buttonContainer}>
                 <Button href={album.url} label={album.title}>
@@ -60,12 +62,14 @@ const Album = () => {
             )}
           </div>
         </section>
-        <section>
-          <Heading size="medium" headingLevel="h3">
-            {EN.TRACK_LIST}
-          </Heading>
-          <List data={album.trackList} />
-        </section>
+        {album.trackList && (
+          <section>
+            <Heading size="medium" headingLevel="h3">
+              {EN.TRACK_LIST}
+            </Heading>
+            <List data={album.trackList} />
+          </section>
+        )}
       </section>
     </Layout>
   );

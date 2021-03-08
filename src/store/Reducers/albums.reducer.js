@@ -13,7 +13,7 @@ export const albums = (state = {}, action) => {
       return {
         ...state,
         albumToFocus: null,
-        numberOfAlbumsToDisplay: DEFAULT_ALBUMS_TO_DISPLAY,   
+        numberOfAlbumsToDisplay: DEFAULT_ALBUMS_TO_DISPLAY,
       };
     case SET_NUMBER_OF_ALBUMS_TO_DISPLAY:
       return {

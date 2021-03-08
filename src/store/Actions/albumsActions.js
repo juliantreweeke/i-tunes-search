@@ -9,9 +9,8 @@ import { sessionStore } from "../../utils/storage";
 import { SESSION_STORAGE_KEYS } from "../../constants";
 import {
   filterArrOfObjectsByKey,
-  formatDateStringToYear, 
-  truncateString,
-  resizeITunesImageURL
+  formatDateStringToYear,
+  resizeITunesImageURL,
 } from "../../helpers/helpers";
 
 const initAlbums = () => {
@@ -19,25 +18,32 @@ const initAlbums = () => {
     dispatch(setAlbumFocusFromStorage());
     dispatch(setNumberOfAlbumsToDisplay());
   };
-}
-  
-const parseAlbums = (data) => {
+};
 
-  const albumsFilteredByCollection = filterArrOfObjectsByKey(data, 'collectionId');
+const parseAlbums = (data) => {
+  const albumKey = "collectionId";
+
+  const getCollectionsInData = data.filter((obj) =>
+    Object.keys(obj).includes(albumKey)
+  );
+  const albumsFilteredByUniqueCollection = filterArrOfObjectsByKey(
+    getCollectionsInData,
+    albumKey
+  );
 
   return (dispatch) => {
-    const parsedData = albumsFilteredByCollection.map((album) => {
+    const parsedData = albumsFilteredByUniqueCollection.map((album) => {
       return {
         url: `/album/${album.collectionId}`,
-        image: resizeITunesImageURL(album.artworkUrl100, 250),
-        heading: truncateString(album.collectionName),
-        text: truncateString(album.artistName),
+        image: resizeITunesImageURL(album.artworkUrl100, 180),
+        heading: album.collectionName,
+        text: album.artistName,
         detail: formatDateStringToYear(album.releaseDate),
-      }
-    })
+      };
+    });
     dispatch(setAlbums(parsedData));
   };
-}
+};
 
 const resetFocusAndDisplayNumber = (data) => {
   return {

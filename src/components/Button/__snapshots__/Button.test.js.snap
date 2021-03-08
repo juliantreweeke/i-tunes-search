@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button HyperLinkButton button matches snapshot with data props 1`] = `
+<div>
+  <a
+    aria-label="label"
+    class="button"
+    href="http://test.com"
+    rel="noreferrer"
+    target="_blank"
+  >
+    Buy now
+  </a>
+</div>
+`;
+
+exports[`Button Standard button matches snapshot with data props 1`] = `
+<div>
+  <button
+    class="button"
+  >
+    Submit
+  </button>
+</div>
+`;
+
+exports[`Button Standard button matches snapshot with loading data props 1`] = `
+<div>
+  <button
+    class="button"
+    data-loading="true"
+  >
+    <div
+      class="loadingSpinnerContainer"
+    >
+      <div
+        class="spinner"
+        data-size="small"
+        id="loading-spinner"
+      />
+    </div>
+    Submit
+  </button>
+</div>
+`;

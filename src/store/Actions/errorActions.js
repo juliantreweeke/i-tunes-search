@@ -10,7 +10,7 @@ const setError = (data) => {
 };
 
 const errorActions = {
-    setError,
-}
+  setError,
+};
 
 export default errorActions;

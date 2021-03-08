@@ -11,6 +11,6 @@ const setSearchQuery = (data) => {
 
 const searchQueryActions = {
   setSearchQuery,
-}
+};
 
 export default searchQueryActions;

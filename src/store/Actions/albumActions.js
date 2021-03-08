@@ -14,7 +14,7 @@ const parseAlbum = (data) => {
         title: track.artistName,
         text: track.trackName,
         detail: millisecondsToMinutes(track.trackTimeMillis),
-        image: track.artworkUrl100
+        image: track.artworkUrl100,
       };
     });
 
@@ -22,7 +22,7 @@ const parseAlbum = (data) => {
       detail: formatDateStringToYear(album.releaseDate),
       title: album.collectionName,
       text: album.artistName,
-      image: resizeITunesImageURL(album.artworkUrl100, 400),
+      image: resizeITunesImageURL(album.artworkUrl100, 350),
       url: album.artistViewUrl,
       trackList: parsedTrackList,
     };

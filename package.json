@@ -41,6 +41,11 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react-hooks": "^5.1.0"
+    "@testing-library/react-hooks": "^5.1.0",
+    "fetch-mock": "^9.11.0",
+    "jest-axe": "^4.1.0",
+    "node-fetch": "^2.6.1",
+    "react-test-renderer": "^17.0.1",
+    "whatwg-fetch": "^3.6.2"
   }
 }

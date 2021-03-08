@@ -1,6 +1,6 @@
-@import './colors.css';
-@import './spacing.css';
-@import './typography.css';
+@import "./colors.css";
+@import "./spacing.css";
+@import "./typography.css";
 
 :root {
   --radius: 8px;
@@ -8,12 +8,20 @@
   --box-shadow-light: 2px 2px 6px 0px;
 }
 
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches snapshot with data 1`] = `
+<div>
+  <li
+    class="card"
+  >
+    <a
+      href="test.com"
+    >
+      <div
+        class="imageContainer"
+      >
+        <img
+          alt="heading"
+          src="testimage.com"
+        />
+      </div>
+      <div
+        class="text"
+      >
+        <h2
+          class="heading"
+          data-size="medium"
+        >
+          heading
+        </h2>
+        <p>
+          some text for testing
+        </p>
+      </div>
+      <div
+        class="detailContainer"
+      >
+        <small>
+          some detail text for testing
+        </small>
+      </div>
+    </a>
+  </li>
+</div>
+`;

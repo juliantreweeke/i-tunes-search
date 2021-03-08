@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm matches snapshot with loading prop 1`] = `
+<div>
+  <form
+    class="searchbar"
+  >
+    <label
+      for="searchQuery"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Enter search criteria here
+      </span>
+    </label>
+    <div
+      class="input_container"
+    >
+      <input
+        class="input"
+        id="searchQuery"
+        name="searchQuery"
+        placeholder="Search..."
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="button"
+      data-loading="true"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="loadingSpinnerContainer"
+      >
+        <div
+          class="spinner"
+          data-size="small"
+          id="loading-spinner"
+        />
+      </div>
+      Search
+    </button>
+  </form>
+</div>
+`;
+
+exports[`SearchForm matches snapshot with placeholder prop 1`] = `
+<div>
+  <form
+    class="searchbar"
+  >
+    <label
+      for="searchQuery"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Enter search criteria here
+      </span>
+    </label>
+    <div
+      class="input_container"
+    >
+      <input
+        class="input"
+        id="searchQuery"
+        name="searchQuery"
+        placeholder="placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="button"
+      disabled=""
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;
+
+exports[`SearchForm matches snapshot without placeholder prop 1`] = `
+<div>
+  <form
+    class="searchbar"
+  >
+    <label
+      for="searchQuery"
+    >
+      <span
+        class="visually-hidden"
+      >
+        Enter search criteria here
+      </span>
+    </label>
+    <div
+      class="input_container"
+    >
+      <input
+        class="input"
+        id="searchQuery"
+        name="searchQuery"
+        placeholder="Search..."
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="button"
+      disabled=""
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;

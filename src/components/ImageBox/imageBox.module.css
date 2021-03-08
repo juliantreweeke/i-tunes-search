@@ -1,8 +1,13 @@
+.spinnerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .imageBox {
-  box-shadow: var(--box-shadow-light);
-  border-radius: var(--radius);
   display: flex;
   height: 100%;
+  flex-direction: column;
 }
 
 .imageBox .image {

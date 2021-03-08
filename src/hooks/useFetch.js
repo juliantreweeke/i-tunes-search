@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 const useFetch = (url) => {
   const cache = useRef({});
+  
   const [fetchedData, setFetchedData] = useState([]);
   const [fetchLoading, setFetchLoading] = useState(false);
   const [fetchError, setFetchError] = useState(null);

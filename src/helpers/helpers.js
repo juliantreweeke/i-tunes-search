@@ -1,5 +1,3 @@
-import { CHARACTER_LIMIT } from "./constants";
-
 export const filterArrOfObjectsByKey = (array, key) => {
   const filteredArray = array.filter(
     (array, index, self) =>
@@ -15,16 +13,6 @@ export const formatDateStringToYear = (dateString) => {
 };
 
 export const isObjectEmpty = (object) => Object.entries(object).length === 0;
-
-export const truncateString = (string) => {
-  if (!string) {
-    return;
-  }
-  if (string.length <= CHARACTER_LIMIT) {
-    return string;
-  }
-  return `${string.slice(0, CHARACTER_LIMIT)}...`;
-};
 
 export const resizeITunesImageURL = (url, width) => {
   const trimmedUrl = url.substring(0, url.lastIndexOf("/") + 1);
