@@ -45,12 +45,12 @@ const parseAlbums = (data) => {
   };
 };
 
-const resetFocusAndDisplayNumber = (data) => {
+const resetFocusAndDisplayNumber = () => {
+  sessionStore.removeItem(SESSION_STORAGE_KEYS.albumsToDisplay);
+  sessionStore.removeItem(SESSION_STORAGE_KEYS.album);
   return {
     type: RESET_FOCUS_AND_DISPLAY_NUMBER,
-    payload: {
-      data,
-    },
+    payload: {},
   };
 };
 
