@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import SearchForm from "../SearchForm/Index";
-import { I_TUNES_BASE_URL } from "../../constants";
 import useAlbums from "../../hooks/useAlbums";
 import useSearchQuery from "../../hooks/useSearchQuery";
 import useError from "../../hooks/useError";
@@ -21,7 +20,7 @@ const AlbumSearch = () => {
   const { search: searchParam } = useLocation();
 
   const setUrlSearchQuery = (searchQuery) => {
-    setUrl(`${I_TUNES_BASE_URL}search?term=${searchQuery}&media=music`)
+    setUrl(`/search?term=${searchQuery}&media=music`)
     setSearchQuery(searchQuery);
   };
 

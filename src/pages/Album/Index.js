@@ -10,13 +10,12 @@ import InfoBox from "../../components/InfoBox/Index";
 import Heading from "../../components/Heading/Index";
 import EN from "../../EN.json";
 import styles from "./album.module.css";
-import { I_TUNES_BASE_URL } from "../../constants";
 
 const Album = () => {
   const { album, parseAlbum } = useAlbum();
 
   const { id } = useParams();
-  const url = `${I_TUNES_BASE_URL}lookup?id=${id}&entity=song`;
+  const url = `/lookup?id=${id}&entity=song`;
 
   const { fetchError, fetchedData, fetchLoading } = useFetch(url);
   const { setError } = useError();
