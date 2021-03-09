@@ -1,20 +1,24 @@
 # iTunes API album search
-
+A small React Application for searching albums on the iTunes api.
 ### Installation:
-Here you need to provide the steps to get the project running.
 
 ### API Reference:
-Add the reference of API which you have used in your project.
+iTunes api: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api
 
 ## Technologies used
-
+* React
+* CSS Modules
+* Jest
+* Jest AXE
+* React Testing Library
+* Redux
 ### Tests:
-Provide example how to run the code. For Example: How to run the script for mobile application.
+To run the tests: ```yarn test```
 
 ### How to use:
-Include steps to provide details about how to use your project.
+To run locally: ```yarn start```
 
-### Things I am happy with
+### Features
 
 ### Key Learnings
 
@@ -22,8 +26,8 @@ Include steps to provide details about how to use your project.
 
 ### Things I would have done different in retrospect
 
+### What is missing and what is next to do for this project
 
-### What is next to do for this project
 
 
 
