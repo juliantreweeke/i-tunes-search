@@ -3,7 +3,6 @@ import React from "react";
 import LoadingSpinner from "../LoadingSpinner/Index";
 import styles from "./imageBox.module.css";
 const ImageBox = ({ image, alt, loading}) => (
-  
   <>
     {loading ? (
       <div className={styles.spinnerContainer}>

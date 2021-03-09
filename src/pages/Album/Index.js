@@ -4,9 +4,9 @@ import useFetch from "../../hooks/useFetch";
 import useAlbum from "../../hooks/useAlbum";
 import useError from "../../hooks/useError";
 import Layout from "../../components/Layout/Index";
-import Button from "../../components/Button/Index";
 import List from "../../components/List/Index";
 import ImageBox from "../../components/ImageBox/Index";
+import InfoBox from "../../components/InfoBox/Index";
 import Heading from "../../components/Heading/Index";
 import EN from "../../EN.json";
 import styles from "./album.module.css";
@@ -40,27 +40,9 @@ const Album = () => {
             image={album.image}
             loading={fetchLoading}
           />
-          <div className={styles.info}>
-            <Heading
-              size="massive"
-              className={styles.heading}
-              headingLevel="h2"
-            >
-              {album.title}
-            </Heading>
-            {album.text && (
-              <p className={styles.text}>
-                <strong>{album.text}</strong> - {album.detail}
-              </p>
-            )}
-            {album.url && (
-              <div className={styles.buttonContainer}>
-                <Button href={album.url} label={album.title}>
-                  {EN.BUY_ALBUM}
-                </Button>
-              </div>
-            )}
-          </div>
+          {album && (
+            <InfoBox buttonText={EN.BUY_ALBUM} headingLevel="h2" data={album} />
+          )}
         </section>
         {album.trackList && (
           <section>

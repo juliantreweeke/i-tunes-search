@@ -4,17 +4,17 @@ import Heading from "./Index";
 
 describe("Heading", () => {
   it("should render", () => {
-    const HeadingComponent = render(<Heading headingLevel="h1" />);
-    expect(HeadingComponent).toBeTruthy();
+    const { container } = render(<Heading headingLevel="h1" />);
+    expect(container).toBeTruthy();
   });
 
   it("matches snapshot with prop data", () => {
-    const HeadingComponent = render(<Heading headingLevel="h1" />);
-    expect(HeadingComponent).toMatchSnapshot();
+    const { container } = render(<Heading headingLevel="h1" />);
+    expect(container).toMatchSnapshot();
   });
 
   it("matches snapshot with invalid headingLevel prop data", () => {
-    const HeadingComponent = render(<Heading headingLevel="invalidvalue" />);
-    expect(HeadingComponent).toMatchSnapshot();
+    const { container } = render(<Heading headingLevel="invalidvalue" />);
+    expect(container).toMatchSnapshot();
   });
 });

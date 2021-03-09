@@ -7,21 +7,21 @@ describe("ImageBox", () => {
   const mockAlt = "altTag";
 
   it("should render", () => {
-    const ImageBoxComponent = render(
+    const { container } = render(
       <ImageBox headingLevel="h1" image={mockImageUrl} alt={mockAlt} />
     );
-    expect(ImageBoxComponent).toBeTruthy();
+    expect(container).toBeTruthy();
   });
 
   it("matches snapshot with prop data", () => {
-    const ImageBoxComponent = render(
+    const { container } = render(
       <ImageBox headingLevel="h1" image={mockImageUrl} alt={mockAlt} />
     );
-    expect(ImageBoxComponent).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it("matches snapshot with prop data when loading is true", () => {
-    const ImageBoxComponent = render(
+    const { container } = render(
       <ImageBox
         headingLevel="h1"
         loading={true}
@@ -29,6 +29,6 @@ describe("ImageBox", () => {
         alt={mockAlt}
       />
     );
-    expect(ImageBoxComponent).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoBox matches snapshot 1`] = `
+<div>
+  <div
+    class="infoBox"
+  >
+    <h2
+      class="heading"
+      data-size="massive"
+    >
+      a title
+    </h2>
+    <p
+      class="text"
+    >
+      <strong>
+        some text for testing
+      </strong>
+       - 
+      some detail text for testing
+    </p>
+  </div>
+</div>
+`;

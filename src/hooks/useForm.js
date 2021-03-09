@@ -14,7 +14,7 @@ const useForm = (callback) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    event.target.reset();
+    event.target.reset && event.target.reset();
     handleCallBack();
   };
 

@@ -1,10 +1,11 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { fireEvent, render, screen} from "@testing-library/react";
 import SearchForm from "./Index";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 const mockHandleSearch = jest.fn();
 const mockPlaceHolder = "placeholder";
+const mockSearchQuery = "a music search";
 
 describe("SearchForm", () => {
   it("should render", () => {
@@ -54,17 +55,49 @@ describe("SearchForm", () => {
   });
 
   it("input should allow values to be entered", async () => {
-    const setup = () => {
-      const utils = render(<SearchForm placeholder={mockPlaceHolder} handleSearch={mockHandleSearch}/>)
-      const input = utils.getByPlaceholderText(mockPlaceHolder);
-      return {
-        input,
-        ...utils,
-      }
-    }
-    const searchQuery = 'a music search';
-    const { input } = setup();
-    fireEvent.change(input, { target: { value: searchQuery } })
-    expect(input.value).toBe(searchQuery)
+    render(
+      <SearchForm
+        placeholder={mockPlaceHolder}
+        handleSearch={mockHandleSearch}
+      />
+    );
+
+    const input = screen.getByPlaceholderText(mockPlaceHolder);
+    const searchQuery = "a music search";
+
+    fireEvent.change(input, { target: { value: mockSearchQuery } });
+    expect(input.value).toBe(searchQuery);
+  });
+
+  it("submitting form with valid input value should call handleSearch function with the correct value", async () => {
+    const { container } = render(
+      <SearchForm
+        handleSearch={mockHandleSearch}
+        placeholder={mockPlaceHolder}
+      />
+    );
+
+    const input = screen.getByPlaceholderText(mockPlaceHolder);
+    const submitButton = container.querySelector("button[type='submit']");
+
+    fireEvent.change(input, { target: { value: mockSearchQuery } });
+    fireEvent.submit(submitButton);
+    expect(mockHandleSearch).toBeCalledWith({ searchQuery: mockSearchQuery });
+  });
+
+  it("submitting form with no input value should not call handleSearch function", async () => {
+    const { container } = render(
+      <SearchForm
+        handleSearch={mockHandleSearch}
+        placeholder={mockPlaceHolder}
+      />
+    );
+
+    const input = screen.getByPlaceholderText(mockPlaceHolder);
+    const submitButton = container.querySelector("button[type='submit']");
+
+    fireEvent.change(input, { target: { value: "" } });
+    fireEvent.submit(submitButton);
+    expect(mockHandleSearch).not.toBeCalled();
   });
 });

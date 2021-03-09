@@ -21,7 +21,7 @@ const AlbumSearch = () => {
   const { search: searchParam } = useLocation();
 
   const setUrlSearchQuery = (searchQuery) => {
-    setUrl(`${I_TUNES_BASE_URL}search?term=${searchQuery}&media=music`);
+    setUrl(`${I_TUNES_BASE_URL}search?term=${searchQuery}&media=music`)
     setSearchQuery(searchQuery);
   };
 

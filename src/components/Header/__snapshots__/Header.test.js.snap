@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches snapshot 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <h1
+      class="heading"
+      data-size="xl"
+    >
+      iTunes Albums
+    </h1>
+    <div>
+      <p>
+        content
+      </p>
+    </div>
+  </header>
+</div>
+`;
