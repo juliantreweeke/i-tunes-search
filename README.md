@@ -9,7 +9,7 @@ iTunes api: https://affiliate.itunes.apple.com/resources/documentation/itunes-st
 ```yarn```
 
 ### Tests:
-To run the tests: ```yarn test```
+To run the tests: ```yarn test a```
 
 ### How to run:
 To run locally: ```yarn start```
@@ -25,10 +25,10 @@ To run locally: ```yarn start```
 
 ***
 ## Features
-A big focus on making this app was to have great accessibility. When pressing a item in the search list and navigating to the album page, when navigating back the focus maintains the users position on the page, making it a good user experience users with screen readers.
-I also tried to increase performance by only displaying 16 search items at a time, with a load more button that adds up to another 16 items at a time.
-There are loading states that show a spinner for the submit button and for the main album image.
-A toast component is used when there is an error on the site.
+*A big focus on making this app was to have great accessibility. When pressing a item in the search list and navigating to the album page, when navigating back the focus maintains the users position on the page, making it a good user experience users with screen readers.
+*I also tried to increase performance by only displaying 16 search items at a time, with a load more button that adds up to another 16 items at a time.
+*There are loading states that show a spinner for the submit button and for the main album image.
+*A toast component is used when there is an error on the site.
 
 ***
 
@@ -38,21 +38,21 @@ Something I used for the first time in this project was Jest AXE which is awesom
 
 Another thing that was interesting was doing a project without backlog refinement, planning, stakeholders, sprint, jira etc.
 Before I started I planned out all the features I wanted to have, all the components I would need and any other tasks required. I set up a trello board to keep track of it all and had some tasks flagged with 'bonus' and priorities them in order.
-I also ended making a 'Not doing/Parked' column as I got through the project and changed some of my decisions'
+I also ended making a 'Not doing/Parked' column as I got through the project and changed some of my decisions.
 ***
 ## Things I would have done different in retrospect
 I am using a useFetch hook to fetch data and then using a redux hook to store that data. In retrospect I wish I had just called an action that then called a fetching service. When I realised that this pattern feels bad I was too deep in and it would have been a major overhaul. With that said when I reused the useFetch in a second component it was super easy and I did see the benefits, but still think that this may not scale well. It also made error handling not so great.
 I spent alot of time on focus state for screen readers which added alot of complexity and used most of my efforts on this feature. Instead I could have used the time differently and gotten closer to 100% test coverage or added animation that I had initially planned for the List component.
 ***
 ## What is missing and what is next to do for this project
+* Refactoring of the fetching pattern to use a service.
 * Proper error handling.
 * 100% test coverage.
 * ImageBox and InfoBox renaming? Kinda was stuck on what I should name these.
 * ImageBox - loading spinner centred properly!
 * A default search result on first page view, maybe top 10 albums on iTunes etc.
 * Logrocket to keep tabs on errors.
-* Animating the 
-* Styling changes to the Album page.
+* Animating the List component and added loading state to the search album cards.
 ***
 
 
