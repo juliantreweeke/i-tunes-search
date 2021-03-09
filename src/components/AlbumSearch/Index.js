@@ -18,7 +18,6 @@ const AlbumSearch = () => {
 
   const history = useHistory();
   const { search: searchParam } = useLocation();
-
   const setUrlSearchQuery = (searchQuery) => {
     setUrl(`/search?term=${searchQuery}&media=music`)
     setSearchQuery(searchQuery);

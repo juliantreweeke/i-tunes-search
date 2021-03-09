@@ -5,6 +5,12 @@ import {
   millisecondsToMinutes,
 } from "../../helpers/helpers";
 
+/**
+ * Updates and formats data array of objects from api request
+ * to be more easily used in components.
+ *
+ * @param {data} array an array of objects
+ */
 const parseAlbum = (data) => {
   return (dispatch) => {
     const [album, ...trackList] = data;

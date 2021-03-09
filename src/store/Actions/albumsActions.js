@@ -20,6 +20,12 @@ const initAlbums = () => {
   };
 };
 
+/**
+ * Updates and formats array of objects from api request
+ * to be more easily used in components.
+ *
+ * @param {data} array an array of objects
+ */
 const parseAlbums = (data) => {
   const albumKey = "collectionId";
 
@@ -93,6 +99,7 @@ const setNumberOfAlbumsToDisplay = () => {
     payload: {},
   };
 };
+
 
 const setAlbumFocusFromStorage = () => {
   const sessionAlbumToFocus = sessionStore.getItem(SESSION_STORAGE_KEYS.album);

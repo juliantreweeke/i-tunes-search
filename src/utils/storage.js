@@ -1,4 +1,9 @@
 function storageFactory(getStorage) {
+/**
+ * Checks to see if storage is supported in browser.
+ *
+ * @returns {Boolean}
+ */
   const isSupported = () => {
     try {
       const key = "test_key";
