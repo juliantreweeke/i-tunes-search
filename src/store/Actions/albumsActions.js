@@ -29,9 +29,17 @@ const initAlbums = () => {
 const parseAlbums = (data) => {
   const albumKey = "collectionId";
 
+/**
+ * Check that all the objects in the data have a collectionId.
+ */
   const getCollectionsInData = data.filter((obj) =>
     Object.keys(obj).includes(albumKey)
   );
+
+/**
+ * As the iTunes API has no way of specifing music type aka songs, albums etc
+ * This makes sure that only albums from the api are stored.
+ */
   const albumsFilteredByUniqueCollection = filterArrOfObjectsByKey(
     getCollectionsInData,
     albumKey
@@ -78,6 +86,10 @@ const setDisplayedAlbums = (data) => {
   };
 };
 
+/**
+ * Checks session storage for a value stored of how many albums were last displayed.
+ * If a value exists, send it on to be stored in reducer, and remove from session storage.
+ */
 const setNumberOfAlbumsToDisplay = () => {
   const sessionNumberOfAlbumsToDisplay = sessionStore.getItem(
     SESSION_STORAGE_KEYS.albumsToDisplay
@@ -100,7 +112,10 @@ const setNumberOfAlbumsToDisplay = () => {
   };
 };
 
-
+/**
+ * Checks session storage for the index of the last focused album.
+ * If a value exists, send it on to be stored in reducer, and remove from session storage.
+ */
 const setAlbumFocusFromStorage = () => {
   const sessionAlbumToFocus = sessionStore.getItem(SESSION_STORAGE_KEYS.album);
   if (sessionAlbumToFocus) {
